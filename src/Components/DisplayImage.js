@@ -1,6 +1,6 @@
 const DisplayImage = (props) => {
 
-  if (props.userInput.image === true) {
+  if (props.userInput.hasOwnProperty('image')) {
     return (
       <div>
         <img src={`https://ipfs.io/ipfs/${props.userInput.image.slice(7)}`} />
@@ -12,5 +12,4 @@ const DisplayImage = (props) => {
     )
   }
 }
-
 export default DisplayImage 
