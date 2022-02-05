@@ -1,12 +1,7 @@
 const Input = (props) => {
   return (
     <div>
-      <form>
-        <input
-          value={props.userInput}
-          onInput={props.handleUserInput}
-        />
-      </form>
+      <textarea vlaue={props.userInput} onInput={props.handleUserInput} />
     </div>
   )
 }
