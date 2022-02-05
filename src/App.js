@@ -1,7 +1,8 @@
 import './App.css'
 import { useState } from 'react'
-import Input from './Components/Input.js'
-import DisplayImage from './Components/DisplayImage.js'
+import Input from './Components/Input'
+import DisplayImage from './Components/DisplayImage'
+import ShowAttributes from './Components/ShowAttributes'
 import { useReducer } from "react"
 
 function App() {
