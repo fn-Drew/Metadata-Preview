@@ -1,25 +1,7 @@
 import { useState } from 'react'
+import ShowAttributes from './ShowAttributes'
 
 const DisplayImage = ({ userInput }) => {
-
-  const ShowAttributes = () => {
-    const [showAttributes, setShowAttributes] = useState(false)
-    const onClick = () => setShowAttributes(!showAttributes)
-    return (
-      <div>
-        <input type="submit" value="Attributes" onClick={onClick} />
-        {showAttributes ? <Attributes /> : null}
-      </div>
-    )
-  }
-
-  const Attributes = () => (
-    <div class="grid gap-4 grid-cols-2 text-center">
-      {userInput.attributes.map((attribute) =>
-        <div> {attribute.trait_type} : {attribute.value} </div>
-      )}
-    </div>
-  )
 
   if (userInput.hasOwnProperty('image')) {
     return (
