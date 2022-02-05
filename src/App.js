@@ -10,19 +10,15 @@ function App() {
 
   const handleUserInput = (event) => {
     event.preventDefault()
-    let input = event.target.value
-    let JSON_input = JSON.parse(input)
+    let JSON_input = JSON.parse(event.target.value)
     setUserInput(JSON_input)
-    console.log(userInput.hasOwnProperty('image'))
-    forceUpdate()
+    // forceUpdate()
   }
 
   return (
-    <div class="h-screen bg-slate-400">
-      <p>test</p>
+    <div class="h-screen grid grid-cols-2 bg-slate-400">
       <Input userInput={userInput} handleUserInput={handleUserInput} />
       <DisplayImage userInput={userInput} />
-      {/* <img src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} alt="NFT preview" /> */}
     </div>
   )
 }
