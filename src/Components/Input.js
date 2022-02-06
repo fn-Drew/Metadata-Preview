@@ -1,7 +1,7 @@
 const Input = (props) => {
   return (
-    <div class="p-12 w-full justify-self-center ">
-      <textarea class="w-5/6" rows="20" placeholder="Input Metadata..." onInput={props.handleUserInput} />
+    <div class="py-12 mx-14 w-full">
+      <textarea class="w-5/6 resize-y" rows="20" placeholder="Input Metadata..." onInput={props.handleUserInput} />
     </div>
   )
 }
