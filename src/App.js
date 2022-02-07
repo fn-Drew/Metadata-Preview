@@ -1,24 +1,35 @@
-import './App.css'
-import { useState, useReducer } from 'react'
+import "./App.css";
+import { useState, useReducer } from "react";
 
-import Input from './Components/Input'
-import DisplayImage from './Components/DisplayImage'
+import RawJsonInput from "./Components/RawJsonInput";
+
+import Media from "./Components/render/Media";
+import Description from "./Components/render/Description";
+import Attributes from "./Components/render/Attributes";
+import ExternalUrl from "./Components/render/ExternalUrl";
 
 function App() {
-  const [userInput, setUserInput] = useState([])
+  const [rawJsonInput, setRawJsonInput] = useState([]);
 
-  const handleUserInput = (event) => {
-    event.preventDefault()
-    const JSON_input = JSON.parse(event.target.value)
-    setUserInput(JSON_input)
-  }
+  const handleRawJsonInput = (event) => {
+    event.preventDefault();
+    const rawJsonInput = JSON.parse(event.target.value);
+    setRawJsonInput(rawJsonInput);
+  };
 
   return (
-    <div class="h-full font-body w-full grid grid-cols-2 bg-white">
-      <Input userInput={userInput} handleUserInput={handleUserInput} />
-      <DisplayImage userInput={userInput} />
+    <div class="font-body grid h-full w-full grid-cols-2 bg-white">
+      <RawJsonInput handleUserInput={handleRawJsonInput} />
+
+      <Media userInput={rawJsonInput} />
+
+      <ExternalUrl externalUrl={rawJsonInput.external_url} />
+      <div class="border-2 border-solid border-black text-center">
+        <Description description={rawJsonInput.description} />
+        <Attributes attributes={rawJsonInput.attributes} />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
