@@ -7,6 +7,7 @@ import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
 import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
+import Generator from "./Components/render/DemoGenerator"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -19,7 +20,10 @@ function App() {
 
   return (
     <div class="font-body grid h-full w-full grid-cols-2 bg-[#fbfdff]">
-      <RawJsonInput handleUserInput={handleRawJsonInput} />
+      <div>
+        <RawJsonInput handleUserInput={handleRawJsonInput} />
+        <Generator userInput={rawJsonInput} />
+      </div>
       <div>
         <Media userInput={rawJsonInput} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
