@@ -3,7 +3,7 @@ const Media = ({ userInput }) => {
     return (
       <div class="flex flex-col">
         <div class="text-center text-3xl"> {userInput.name} </div>
-        <img alt="" class="w-1/2 place-self-center" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
+        <img alt="NFT Image" class="w-1/2 place-self-center" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
       </div>
     )
   } else {

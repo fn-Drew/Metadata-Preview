@@ -18,15 +18,15 @@ function App() {
   };
 
   return (
-    <div class="font-body grid h-full w-full grid-cols-2 bg-white">
+    <div class="font-body grid h-full w-full grid-cols-2 bg-[#fbfdff]">
       <RawJsonInput handleUserInput={handleRawJsonInput} />
-
-      <Media userInput={rawJsonInput} />
-
-      <ExternalUrl externalUrl={rawJsonInput.external_url} />
-      <div class="border-2 border-solid border-black text-center">
-        <Description description={rawJsonInput.description} />
-        <Attributes attributes={rawJsonInput.attributes} />
+      <div>
+        <Media userInput={rawJsonInput} />
+        <ExternalUrl externalUrl={rawJsonInput.external_url} />
+        <div class="border-2 border-solid border-black text-center">
+          <Description description={rawJsonInput.description} />
+          <Attributes attributes={rawJsonInput.attributes} />
+        </div>
       </div>
     </div>
   );
