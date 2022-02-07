@@ -14,7 +14,7 @@ function App() {
   }
 
   return (
-    <div class="h-screen w-screen grid grid-cols-2 bg-slate-400">
+    <div class="h-full w-full grid grid-cols-2 bg-white">
       <Input userInput={userInput} handleUserInput={handleUserInput} />
       <DisplayImage userInput={userInput} />
     </div>

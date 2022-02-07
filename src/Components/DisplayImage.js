@@ -3,33 +3,31 @@ import { useState } from 'react'
 const DisplayImage = ({ userInput }) => {
 
   const ShowDescription = () => {
-
     const [showDescription, setShowDescription] = useState(false)
     const onClick = () => setShowDescription(!showDescription)
 
     if (userInput.hasOwnProperty('description')) {
       return (
-        <div>
-          <input type="submit" value="Description" onClick={onClick} />
+        <div class="">
+          <input class="bg-teal-300 w-5/6 mt-6 " type="submit" value="Description" onClick={onClick} />
           {showDescription ? <Description /> : null}
         </div>
       )
     } else {
       return null
     }
-
   }
 
   const Description = () => <div> {userInput.description} </div>
 
   const ShowAttributes = () => {
-    const [showAttributes, setShowAttributes] = useState(false)
+    const [showAttributes, setShowAttributes] = useState(true)
     const onClick = () => setShowAttributes(!showAttributes)
 
     if (userInput.hasOwnProperty('attributes')) {
       return (
-        <div>
-          <input type="submit" value="Attributes" onClick={onClick} />
+        <div class="flex-row ">
+          <input class="bg-teal-300" type="submit" value="Attributes" onClick={onClick} />
           {showAttributes ? <Attributes /> : null}
         </div>
       )
@@ -39,26 +37,33 @@ const DisplayImage = ({ userInput }) => {
   }
 
   const Attributes = () => (
-    <div class="grid gap-4 grid-cols-2 text-center">
+    <div class="grid grid-cols-2">
       {userInput.attributes.map((attribute) =>
-        <div>
-          <div> {attribute.trait_type}  </div>
-          <div> {attribute.value}</div>
+        <div class="outline outline-teal-400 p-4 m-4 rounded-lg">
+          <div class="text-md text-teal-600" > {attribute.trait_type.toUpperCase()}  </div>
+          <div class="text-3xl"> {attribute.value}</div>
         </div>
       )}
     </div>
   )
 
-  const ShowExternalUrl = () => <a href={userInput.external_url}> External Url </a>
+  const ShowExternalUrl = () => {
+    if (userInput.hasOwnProperty('external_url')) {
+      return <a href={userInput.external_url}> External Url </a>
+    } else
+      return null
+  }
 
   if (userInput.hasOwnProperty('image')) {
     return (
-      <div class="flex py-8 flex-col">
+      <div class="flex py-8 bg-green-300 flex-col">
         <div class="text-center text-5xl"> {userInput.name} </div>
-        <img class="place-self-center py-8 w-4/5" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
+        <img class="place-self-center my-8 w-1/2" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
         <ShowExternalUrl />
-        <ShowDescription />
-        <ShowAttributes />
+        <div class="flex flex-col">
+          <ShowDescription />
+          <ShowAttributes />
+        </div>
       </div>
     )
   } else {
@@ -67,4 +72,5 @@ const DisplayImage = ({ userInput }) => {
     )
   }
 }
+
 export default DisplayImage 
