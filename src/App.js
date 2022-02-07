@@ -14,15 +14,14 @@ function App() {
 
   const handleRawJsonInput = (event) => {
     event.preventDefault();
-    const rawJsonInput = JSON.parse(event.target.value)
-    setRawJsonInput(rawJsonInput)
+    setRawJsonInput(JSON.parse(event.target.value))
   }
 
   return (
     <div class="font-body grid h-full w-full grid-cols-2 bg-[#fbfdff]">
       <div>
         <RawJsonInput handleUserInput={handleRawJsonInput} />
-        <Generator userInput={rawJsonInput} />
+        <Generator userInput={rawJsonInput} setUserInput={setRawJsonInput} />
       </div>
       <div>
         <Media userInput={rawJsonInput} />

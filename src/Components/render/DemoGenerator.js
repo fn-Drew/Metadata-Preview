@@ -68,7 +68,7 @@ const schema = createOrderedMap(
   });
 
 const values = {
-  "description": "The Heart Project is a community-run creative studio which enables passionate lovers of creativity to shape the art we interact with. 10,000 unique tokens on the Ethereum-based blockchain will serve as membership passes which grant access to creative contribution and shared ownership of our group creations. The Heart Project Creative Studio is designed to produce media with thousands of contributors on every project and grants ownership of our shared creations.",
+  "description": "This is the hard coded JSON.",
   "image": "ipfs://QmTGXYR5g1QF2Wj7v8myKCrpGBnq2NU6SaPVBJpjXfkPKA/583.png",
   "name": "Heart #583",
   "attributes": [
