@@ -1,5 +1,5 @@
 const Attributes = ({ attributes }) => {
-  if (!attributes) { return null; }
+  if (!attributes) { return null }
 
   return (
     <div class="grid grid-cols-2 bg-[#fbfdff]">
@@ -12,8 +12,7 @@ const Attributes = ({ attributes }) => {
         </div>
       ))}
     </div>
-  );
-
-};
+  )
+}
 
 export default Attributes;

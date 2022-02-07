@@ -1,21 +1,21 @@
-import "./App.css";
-import { useState, useReducer } from "react";
+import "./App.css"
+import { useState, useReducer } from "react"
 
-import RawJsonInput from "./Components/RawJsonInput";
+import RawJsonInput from "./Components/RawJsonInput"
 
-import Media from "./Components/render/Media";
-import Description from "./Components/render/Description";
-import Attributes from "./Components/render/Attributes";
-import ExternalUrl from "./Components/render/ExternalUrl";
+import Media from "./Components/render/Media"
+import Description from "./Components/render/Description"
+import Attributes from "./Components/render/Attributes"
+import ExternalUrl from "./Components/render/ExternalUrl"
 
 function App() {
-  const [rawJsonInput, setRawJsonInput] = useState([]);
+  const [rawJsonInput, setRawJsonInput] = useState([])
 
   const handleRawJsonInput = (event) => {
     event.preventDefault();
-    const rawJsonInput = JSON.parse(event.target.value);
-    setRawJsonInput(rawJsonInput);
-  };
+    const rawJsonInput = JSON.parse(event.target.value)
+    setRawJsonInput(rawJsonInput)
+  }
 
   return (
     <div class="font-body grid h-full w-full grid-cols-2 bg-[#fbfdff]">
@@ -29,7 +29,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
