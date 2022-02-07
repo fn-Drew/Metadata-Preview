@@ -23,7 +23,7 @@ function App() {
       <div>
         <Media userInput={rawJsonInput} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
-        <div class="border-2 border-solid border-black text-center">
+        <div class="text-center">
           <Description description={rawJsonInput.description} />
           <Attributes attributes={rawJsonInput.attributes} />
         </div>
