@@ -18,10 +18,12 @@ function App() {
   }
 
   return (
-    <div class="font-body grid h-full w-full grid-cols-2 bg-[#fbfdff]">
-      <div>
+    <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
+      <div class="">
         <RawJsonInput handleUserInput={handleRawJsonInput} />
-        <Generator userInput={rawJsonInput} setUserInput={setRawJsonInput} />
+        <div class="m-16">
+          <Generator userInput={rawJsonInput} setUserInput={setRawJsonInput} />
+        </div>
       </div>
       <div>
         <Media userInput={rawJsonInput} />
