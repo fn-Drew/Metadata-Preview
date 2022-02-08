@@ -7,7 +7,7 @@ import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
 import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
-import Generator from "./Components/render/DemoGenerator"
+import SchemaUI from "./Components/render/SchemaUI.js"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -21,8 +21,8 @@ function App() {
     <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
       <div class="">
         <RawJsonInput handleUserInput={handleRawJsonInput} />
-        <div class="m-16">
-          <Generator userInput={rawJsonInput} setUserInput={setRawJsonInput} />
+        <div>
+          <SchemaUI userInput={rawJsonInput} />
         </div>
       </div>
       <div>
