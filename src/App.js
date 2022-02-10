@@ -1,5 +1,6 @@
 import "./App.css"
-import { useState, useReducer } from "react"
+import { useState, useReducer, useEffect } from "react"
+import axios from "axios"
 
 import RawJsonInput from "./Components/RawJsonInput"
 
@@ -9,6 +10,7 @@ import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
+import IpfsInput from "./Components/render/IpfsInput"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -20,6 +22,7 @@ function App() {
   return (
     <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
       <div class="">
+        <IpfsInput setRawJsonInput={setRawJsonInput} />
         <RawJsonInput handleUserInput={handleRawJsonInput} />
         <div>
           <SchemaUI userInput={rawJsonInput} />

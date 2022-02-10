@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "axios": "^0.25.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
