@@ -3,9 +3,8 @@ const Media = ({ userInput }) => {
 
   let nftPicture = userInput.image
 
-  if (nftPicture.slice(7) === 'ipfs://') {
+  if (nftPicture.substring(0, 7) === 'ipfs://') {
     nftPicture = `https://ipfs.io/ipfs/${nftPicture.slice(7)}`
-    console.log('IPFS link sliced.')
   }
 
   return (
@@ -14,7 +13,6 @@ const Media = ({ userInput }) => {
       <img alt="" class="shadow-md w-1/2 place-self-center" src={nftPicture} />
     </div>
   )
-
 }
 
 export default Media 
