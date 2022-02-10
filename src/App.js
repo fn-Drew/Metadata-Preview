@@ -10,7 +10,7 @@ import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
-import IpfsInput from "./Components/render/IpfsInput"
+import IpfsInput from "./Components/IpfsInput"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
