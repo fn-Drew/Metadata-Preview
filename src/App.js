@@ -14,7 +14,6 @@ function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
 
   const handleRawJsonInput = (event) => {
-    event.preventDefault();
     setRawJsonInput(JSON.parse(event.target.value))
   }
 
