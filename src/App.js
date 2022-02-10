@@ -8,6 +8,7 @@ import Description from "./Components/render/Description"
 import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
+import AnimationUrl from "./Components/render/AnimationUrl.js"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -27,6 +28,7 @@ function App() {
       </div>
       <div>
         <Media userInput={rawJsonInput} />
+        <AnimationUrl animationUrl={rawJsonInput.animation_url} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
         <div class="text-center">
           <Description description={rawJsonInput.description} />

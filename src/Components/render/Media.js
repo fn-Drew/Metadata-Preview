@@ -4,7 +4,6 @@ const Media = ({ userInput }) => {
       <div class="flex gap-14 flex-col">
         <div class="text-center text-3xl"> {userInput.name} </div>
         <img alt="" class="w-1/2 place-self-center" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
-        <video class="w-1/2 place-self-center" controls> <source src={`https://ipfs.io/ipfs/${userInput.animation_url.slice(7)}`} /> </video>
       </div>
     )
   } else {
