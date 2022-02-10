@@ -1,16 +1,20 @@
 const Media = ({ userInput }) => {
-  if (userInput.hasOwnProperty('image')) {
-    return (
-      <div class="flex gap-14 flex-col">
-        <div class="text-center text-3xl"> {userInput.name} </div>
-        <img alt="" class="w-1/2 place-self-center" src={`https://ipfs.io/ipfs/${userInput.image.slice(7)}`} />
-      </div>
-    )
-  } else {
-    return (
-      <div class="text-center">No image.</div>
-    )
+  if (!userInput.hasOwnProperty('image')) return <div class="text-center">No image.</div>
+
+  let nftPicture = userInput.image
+
+  if (nftPicture.slice(7) === 'ipfs://') {
+    nftPicture = `https://ipfs.io/ipfs/${nftPicture.slice(7)}`
+    console.log('IPFS link sliced.')
   }
+
+  return (
+    <div class="flex gap-14 flex-col">
+      <div class="text-center pt-8 text-3xl"> {userInput.name} </div>
+      <img alt="" class="shadow-md w-1/2 place-self-center" src={nftPicture} />
+    </div>
+  )
+
 }
 
 export default Media 

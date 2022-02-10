@@ -56,10 +56,10 @@ const SchemaUI = ({ userInput }) => {
       {Object.entries(properties).map(([propertyName, propertyInfo]) => {
         // if (!propertyInfo.value) return null
         return (
-          <div>
+          <div class="my-4 ml-14">
             <div class="text-3xl">{propertyName}</div>
             {/* <textarea class="border-none bg-[#fbfdff] my-2 leading-relaxed font-body text-left w-4/5 resize-none" value={propertyInfo.value} readOnly /> */}
-            <textarea class="w-5/6 h-5/6 resize-y" placeholder="Input Metadata..." value={propertyInfo.value} />
+            <textarea class="w-5/6 h-5/6 resize-y" placeholder={`No ${propertyName} found...`} value={propertyInfo.value} />
           </div>
         )
       })}
