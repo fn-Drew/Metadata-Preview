@@ -54,14 +54,28 @@ const SchemaUI = ({ userInput }) => {
   return (
     <div>
       {Object.entries(properties).map(([propertyName, propertyInfo]) => {
-        // if (!propertyInfo.value) return null
-        return (
-          <div class="my-4 ml-14">
-            <div class="text-3xl">{propertyName}</div>
-            {/* <textarea class="border-none bg-[#fbfdff] my-2 leading-relaxed font-body text-left w-4/5 resize-none" value={propertyInfo.value} readOnly /> */}
-            <textarea class="w-5/6 h-5/6 resize-y" placeholder={`No ${propertyName} found...`} value={propertyInfo.value} />
-          </div>
-        )
+        if (propertyInfo.value || propertyInfo.necessity === "none") {
+          return (
+            <div class="my-4 ml-14">
+              <div class="text-3xl">{propertyName}</div>
+              <textarea class="w-5/6 h-5/6 resize-y" placeholder={`No ${propertyName} found...`} value={propertyInfo.value} />
+            </div>
+          )
+        } else if (propertyInfo.necessity === "required") {
+          return (
+            <div class="my-4 ml-14">
+              <div class="text-3xl text-red-500">*{propertyName}</div>
+              <textarea class="text-red-500 w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a required property!`} value={propertyInfo.value} />
+            </div>
+          )
+        } else if (propertyInfo.necessity === "recommended") {
+          return (
+            <div class="my-4 ml-14">
+              <div class="text-3xl text-orange-500">*{propertyName}</div>
+              <textarea class="text-orange-500 w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a recommended property.`} value={propertyInfo.value} />
+            </div>
+          )
+        }
       })}
     </div>
   )
