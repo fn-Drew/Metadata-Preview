@@ -9,22 +9,21 @@ const NavBar = ({ setRawJsonInput, handleRawJsonInput }) => {
   const [displayIpfsInput, setDisplayIpfsInput] = useState(false)
   const [displayFileInput, setDisplayFileInput] = useState(false)
 
-
   const showRawJsonInput = () => {
-    setDisplayRawJsonInput(!displayRawJsonInput);
+    setDisplayRawJsonInput(true);
     setDisplayIpfsInput(false);
     setDisplayFileInput(false);
   }
   const showIpfsInput = () => {
     setDisplayRawJsonInput(false);
-    setDisplayIpfsInput(!displayIpfsInput);
+    setDisplayIpfsInput(true);
     setDisplayFileInput(false);
   }
 
   const showFileInput = () => {
     setDisplayRawJsonInput(false);
     setDisplayIpfsInput(false);
-    setDisplayFileInput(!displayFileInput);
+    setDisplayFileInput(true);
   }
 
   return (
