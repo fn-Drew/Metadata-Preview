@@ -12,7 +12,6 @@ const IpfsInput = ({ setRawJsonInput }) => {
       .then(response => {
         const jsonOutput = response.data
         setRawJsonInput(jsonOutput)
-        console.log(jsonOutput)
       })
   }
   useEffect(hook, [])

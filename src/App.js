@@ -11,6 +11,7 @@ import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
 import IpfsInput from "./Components/IpfsInput"
+import NavBar from "./Components/NavBar"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -21,9 +22,10 @@ function App() {
 
   return (
     <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
-      <div class="">
-        <IpfsInput setRawJsonInput={setRawJsonInput} />
-        <RawJsonInput handleUserInput={handleRawJsonInput} />
+      <div>
+        <NavBar setRawJsonInput={setRawJsonInput} handleRawJsonInput={handleRawJsonInput} />
+        {/* <IpfsInput setRawJsonInput={setRawJsonInput} /> */}
+        {/* <RawJsonInput handleUserInput={handleRawJsonInput} /> */}
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>
