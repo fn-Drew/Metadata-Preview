@@ -1,4 +1,3 @@
-import { LaptopWindows } from "@material-ui/icons"
 import { useState } from "react"
 
 import IpfsInput from "./IpfsInput"

@@ -1,8 +1,5 @@
 import "./App.css"
-import { useState, useReducer, useEffect } from "react"
-import axios from "axios"
-
-import RawJsonInput from "./Components/RawJsonInput"
+import { useState } from "react"
 
 import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
@@ -10,7 +7,6 @@ import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
-import IpfsInput from "./Components/IpfsInput"
 import NavBar from "./Components/NavBar"
 
 function App() {
