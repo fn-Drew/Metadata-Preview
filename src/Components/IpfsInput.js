@@ -13,7 +13,7 @@ const IpfsInput = ({ setRawJsonInput }) => {
         setRawJsonInput(jsonOutput)
       })
   }
-  useEffect(hook, [])
+  useEffect(hook, [ipfsInput])
 
   const handleIpfsInput = (event) => {
     setIpfsInput(event.target.value)
