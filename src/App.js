@@ -20,8 +20,6 @@ function App() {
     <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
       <div>
         <NavBar setRawJsonInput={setRawJsonInput} handleRawJsonInput={handleRawJsonInput} />
-        {/* <IpfsInput setRawJsonInput={setRawJsonInput} /> */}
-        {/* <RawJsonInput handleUserInput={handleRawJsonInput} /> */}
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>

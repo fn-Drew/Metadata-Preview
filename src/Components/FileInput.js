@@ -6,12 +6,9 @@ function FileInput({ setRawJsonInput }) {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
 
-      reader.onabort = () => console.log('file reading was aborted')
-      reader.onerror = () => console.log('file reading has failed')
       reader.onload = () => {
         // Do whatever you want with the file contents
         const binaryStr = reader.result
-        console.log(JSON.parse(binaryStr))
         setRawJsonInput(JSON.parse(binaryStr))
       }
       reader.readAsText(file)
@@ -23,7 +20,7 @@ function FileInput({ setRawJsonInput }) {
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      <p class="p-12 text-xl rounded-lg shadow-md shadow-black">Drag 'n' drop some files here, or click to select files</p>
+      <p class="p-12 hover:shadow-blue-500 transition-all bg-[#edf9fe] m-24 text-xl rounded-lg shadow-md shadow-black">Drag n' drop or click to select file</p>
     </div>
   )
 }
