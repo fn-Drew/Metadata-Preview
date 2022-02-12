@@ -66,14 +66,14 @@ const SchemaUI = ({ userInput }) => {
           } else if (propertyInfo.necessity === "required") {
             return (
               <div class="my-4 ml-14">
-                <div class="text-3xl text-red-500">*{propertyName}</div>
+                <div class="text-3xl"><span class="text-red-500">*</span>{propertyName}</div>
                 <textarea class="bg-[#edf9fe] transition-shadow duration-300 focus:outline-none focus:shadow-md p-2 m-2 border-[#69cdee] border-solid border-[1px] w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a required property!`} value={propertyInfo.value} />
               </div>
             )
           } else if (propertyInfo.necessity === "recommended") {
             return (
               <div class="my-4 ml-14">
-                <div class="text-3xl text-orange-500">*{propertyName}</div>
+                <div class="text-3xl"><span class="text-yellow-500">*</span>{propertyName}</div>
                 <textarea class="bg-[#edf9fe] transition-shadow duration-300 focus:outline-none focus:shadow-md p-2 m-2 border-[#69cdee] border-solid border-[1px] w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a recommended property.`} value={propertyInfo.value} />
               </div>
             )
