@@ -53,30 +53,33 @@ const SchemaUI = ({ userInput }) => {
 
   return (
     <div>
-      {Object.entries(properties).map(([propertyName, propertyInfo]) => {
-        if (propertyInfo.value || propertyInfo.necessity === "none") {
-          return (
-            <div class="my-4 ml-14">
-              <div class="text-3xl">{propertyName}</div>
-              <textarea class="w-5/6 h-5/6 resize-y" placeholder={`No ${propertyName} found...`} value={propertyInfo.value} />
-            </div>
-          )
-        } else if (propertyInfo.necessity === "required") {
-          return (
-            <div class="my-4 ml-14">
-              <div class="text-3xl text-red-500">*{propertyName}</div>
-              <textarea class="text-red-500 w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a required property!`} value={propertyInfo.value} />
-            </div>
-          )
-        } else if (propertyInfo.necessity === "recommended") {
-          return (
-            <div class="my-4 ml-14">
-              <div class="text-3xl text-orange-500">*{propertyName}</div>
-              <textarea class="text-orange-500 w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a recommended property.`} value={propertyInfo.value} />
-            </div>
-          )
-        }
-      })}
+      <div class="text-4xl pb-4 pt-12 text-center"> Properties </div>
+      <div class="ml-2 mb-12" >
+        {Object.entries(properties).map(([propertyName, propertyInfo]) => {
+          if (propertyInfo.value || propertyInfo.necessity === "none") {
+            return (
+              <div class="my-4 ml-14">
+                <div class="text-3xl m-2">{propertyName}</div>
+                <textarea class="bg-[#edf9fe] transition-shadow duration-300 focus:outline-none focus:shadow-md p-2 m-2 border-[#69cdee] border-solid border-[1px] w-5/6 h-5/6 resize-y" rows='1' placeholder={`No ${propertyName} found...`} value={propertyInfo.value} />
+              </div>
+            )
+          } else if (propertyInfo.necessity === "required") {
+            return (
+              <div class="my-4 ml-14">
+                <div class="text-3xl text-red-500">*{propertyName}</div>
+                <textarea class="bg-[#edf9fe] transition-shadow duration-300 focus:outline-none focus:shadow-md p-2 m-2 border-[#69cdee] border-solid border-[1px] w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a required property!`} value={propertyInfo.value} />
+              </div>
+            )
+          } else if (propertyInfo.necessity === "recommended") {
+            return (
+              <div class="my-4 ml-14">
+                <div class="text-3xl text-orange-500">*{propertyName}</div>
+                <textarea class="bg-[#edf9fe] transition-shadow duration-300 focus:outline-none focus:shadow-md p-2 m-2 border-[#69cdee] border-solid border-[1px] w-5/6 h-5/6 resize-y" placeholder={`${propertyName} is a recommended property.`} value={propertyInfo.value} />
+              </div>
+            )
+          }
+        })}
+      </div>
     </div>
   )
 }

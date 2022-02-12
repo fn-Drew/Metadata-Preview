@@ -20,7 +20,7 @@ function FileInput({ setRawJsonInput }) {
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      <p class="p-12 hover:shadow-blue-500 transition-all bg-[#edf9fe] m-24 text-xl rounded-lg shadow-md shadow-black">Drag n' drop or click to select file</p>
+      <p class="transition-all hover:text-[#1786ac] text-semibold p-12 text-center hover:shadow-sky-600 hover:bg-[#e7f4fa] bg-[#edf9fe] m-24 text-4xl rounded-lg shadow-md shadow-black">Drag n' drop <br /> or <br /> Click to select file</p>
     </div>
   )
 }
