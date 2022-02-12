@@ -2,6 +2,7 @@ import { useState } from "react"
 
 import IpfsInput from "./IpfsInput"
 import RawJsonInput from "./RawJsonInput"
+import FileInput from "./FileInput"
 
 const NavBar = ({ setRawJsonInput, handleRawJsonInput }) => {
   const [displayRawJsonInput, setDisplayRawJsonInput] = useState(false)
@@ -41,7 +42,7 @@ const NavBar = ({ setRawJsonInput, handleRawJsonInput }) => {
       <div>
         {displayRawJsonInput && <RawJsonInput handleUserInput={handleRawJsonInput} />}
         {displayIpfsInput && <IpfsInput setRawJsonInput={setRawJsonInput} />}
-        {displayFileInput && <div>File Input Placeholder</div>}
+        {displayFileInput && <FileInput setRawJsonInput={setRawJsonInput} />}
       </div>
     </div>
   )
