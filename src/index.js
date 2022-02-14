@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route
             path="RawJsonInput"
-            element={<RawJsonInput handleUserInput={handleRawJsonInput} />}
+            element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
           />
           <Route
             path="IPFSinput"

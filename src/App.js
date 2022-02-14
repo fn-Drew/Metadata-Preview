@@ -1,5 +1,6 @@
 import "./App.css"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
@@ -8,6 +9,9 @@ import ExternalUrl from "./Components/render/ExternalUrl"
 import SchemaUI from "./Components/render/SchemaUI.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
 import NavBar from "./Components/NavBar"
+import RawJsonInput from "./Components/RawJsonInput"
+import IpfsInput from "./Components/IpfsInput"
+import FileInput from "./Components/FileInput"
 
 function App() {
   const [rawJsonInput, setRawJsonInput] = useState([])
@@ -19,10 +23,12 @@ function App() {
   return (
     <div class="w grid h-full w-full grid-cols-2 bg-[#fbfdff] font-body">
       <div>
-        <NavBar
-          setRawJsonInput={setRawJsonInput}
-          handleRawJsonInput={handleRawJsonInput}
-        />
+        <NavBar />
+        <div class="border-blue-500 border-solid border-4">
+          <RawJsonInput handleRawJsonInput={handleRawJsonInput} />
+          <IpfsInput setRawJsonInput={setRawJsonInput} />
+          <FileInput setRawJsonInput={setRawJsonInput} />
+        </div>
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>
