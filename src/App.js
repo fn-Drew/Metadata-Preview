@@ -17,9 +17,12 @@ function App() {
   }
 
   return (
-    <div class="font-body grid h-full w-full w grid-cols-2 bg-[#fbfdff]">
+    <div class="w grid h-full w-full grid-cols-2 bg-[#fbfdff] font-body">
       <div>
-        <NavBar setRawJsonInput={setRawJsonInput} handleRawJsonInput={handleRawJsonInput} />
+        <NavBar
+          setRawJsonInput={setRawJsonInput}
+          handleRawJsonInput={handleRawJsonInput}
+        />
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>
@@ -37,4 +40,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

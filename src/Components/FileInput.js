@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react'
-import { useDropzone } from 'react-dropzone'
+import React, { useCallback } from "react"
+import { useDropzone } from "react-dropzone"
 
 function FileInput({ setRawJsonInput }) {
   const onDrop = useCallback((acceptedFiles) => {
@@ -13,16 +13,17 @@ function FileInput({ setRawJsonInput }) {
       }
       reader.readAsText(file)
     })
-
   }, [])
   const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      <p class="transition-all hover:text-[#1786ac] text-semibold p-12 text-center hover:shadow-sky-600 hover:bg-[#e7f4fa] bg-[#edf9fe] m-24 text-4xl rounded-lg shadow-md shadow-black">Drag n' drop <br /> or <br /> Click to select file</p>
+      <p class="text-semibold m-24 rounded-lg bg-[#edf9fe] p-12 text-center text-4xl shadow-md shadow-black transition-all hover:bg-[#e7f4fa] hover:text-[#1786ac] hover:shadow-sky-600">
+        Drag n' drop <br /> or <br /> Click to select file
+      </p>
     </div>
   )
 }
 
-export default FileInput 
+export default FileInput
