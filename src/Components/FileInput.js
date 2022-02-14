@@ -1,5 +1,6 @@
 import React, { useCallback } from "react"
 import { useDropzone } from "react-dropzone"
+import { Upload32 } from "@carbon/icons-react"
 
 function FileInput({ setRawJsonInput }) {
   const onDrop = useCallback((acceptedFiles) => {
@@ -17,11 +18,11 @@ function FileInput({ setRawJsonInput }) {
   const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
   return (
-    <div {...getRootProps()}>
+    <div class="flex content-center justify-center" {...getRootProps()}>
       <input {...getInputProps()} />
-      <p class="text-semibold m-24 rounded-lg bg-[#edf9fe] p-12 text-center text-4xl shadow-md shadow-black transition-all hover:bg-[#e7f4fa] hover:text-[#1786ac] hover:shadow-sky-600">
-        Drag n' drop <br /> or <br /> Click to select file
-      </p>
+      <div class="flex p-8 bg-[#edf9fe] my-10 content-center justify-center border-[1px] border-solid border-[#69cdee] w-1/2">
+        <Upload32 class="" />
+      </div>
     </div>
   )
 }

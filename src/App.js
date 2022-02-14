@@ -41,8 +41,8 @@ const App = () => {
             <Route
               path="*"
               element={
-                <div class="py-8 text-center text-5xl">
-                  <p> There's nothing here! </p>
+                <div class="py-8 text-center text-4xl">
+                  <p> Choose an input method </p>
                 </div>
               }
             />
