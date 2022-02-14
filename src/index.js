@@ -11,33 +11,8 @@ import IpfsInput from "./Components/IpfsInput"
 import FileInput from "./Components/FileInput"
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route
-            path="RawJsonInput"
-            element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
-          />
-          <Route
-            path="IPFSinput"
-            element={<IpfsInput setRawJsonInput={setRawJsonInput} />}
-          />
-          <Route
-            path="FileInput"
-            element={<FileInput setRawJsonInput={setRawJsonInput} />}
-          />
-          <Route
-            path="*"
-            element={
-              <div class="py-8 text-center text-5xl">
-                <p> There's nothing here! </p>
-              </div>
-            }
-          />
-        </Route>
-      </Routes>
-    </React.StrictMode>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 )

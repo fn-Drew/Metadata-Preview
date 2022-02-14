@@ -1,6 +1,6 @@
 import "./App.css"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
@@ -13,7 +13,7 @@ import RawJsonInput from "./Components/RawJsonInput"
 import IpfsInput from "./Components/IpfsInput"
 import FileInput from "./Components/FileInput"
 
-function App() {
+const App = () => {
   const [rawJsonInput, setRawJsonInput] = useState([])
 
   const handleRawJsonInput = (event) => {
@@ -23,12 +23,32 @@ function App() {
   return (
     <div class="w grid h-full w-full grid-cols-2 bg-[#fbfdff] font-body">
       <div>
-        <NavBar />
-        <div class="border-blue-500 border-solid border-4">
-          <RawJsonInput handleRawJsonInput={handleRawJsonInput} />
-          <IpfsInput setRawJsonInput={setRawJsonInput} />
-          <FileInput setRawJsonInput={setRawJsonInput} />
-        </div>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route
+              path="RawJsonInput"
+              element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
+            />
+            <Route
+              path="IPFSinput"
+              element={<IpfsInput setRawJsonInput={setRawJsonInput} />}
+            />
+            <Route
+              path="FileInput"
+              element={<FileInput setRawJsonInput={setRawJsonInput} />}
+            />
+            <Route
+              path="*"
+              element={
+                <div class="py-8 text-center text-5xl">
+                  <p> There's nothing here! </p>
+                </div>
+              }
+            />
+          </Routes>
+        </Router>
+
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>
