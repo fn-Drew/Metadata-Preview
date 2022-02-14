@@ -1,4 +1,4 @@
-const SchemaUI = ({ userInput }) => {
+const Properties = ({ userInput }) => {
   const properties = {
     image: {
       value: userInput.image,
@@ -65,11 +65,10 @@ const SchemaUI = ({ userInput }) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
               <div class="my-4 ml-14">
-                <div class="m-2 text-3xl">{propertyName}</div>
                 <textarea
-                  class="m-2 h-5/6 w-5/6 resize-y border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-shadow duration-300 focus:shadow-md focus:outline-none"
+                  class="w-5/6 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#fbfdff] focus:outline-none"
                   rows="1"
-                  placeholder={`No ${propertyName} found...`}
+                  placeholder={propertyName}
                   value={propertyInfo.value}
                 />
               </div>
@@ -109,4 +108,4 @@ const SchemaUI = ({ userInput }) => {
   )
 }
 
-export default SchemaUI
+export default Properties
