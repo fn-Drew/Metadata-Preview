@@ -66,7 +66,7 @@ const Properties = ({ userInput }) => {
             return (
               <div class="my-4 ml-14">
                 <textarea
-                  class="w-5/6 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#fbfdff] focus:outline-none"
+                  class="w-5/6 shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={propertyName}
                   value={propertyInfo.value}
@@ -76,12 +76,9 @@ const Properties = ({ userInput }) => {
           } else if (propertyInfo.necessity === "required") {
             return (
               <div class="my-4 ml-14">
-                <div class="text-3xl">
-                  <span class="text-red-500">*</span>
-                  {propertyName}
-                </div>
                 <textarea
-                  class="m-2 h-5/6 w-5/6 resize-y border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-shadow duration-300 focus:shadow-md focus:outline-none"
+                  class="w-5/6 shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  rows="1"
                   placeholder={`${propertyName} is a required property!`}
                   value={propertyInfo.value}
                 />
@@ -90,12 +87,9 @@ const Properties = ({ userInput }) => {
           } else if (propertyInfo.necessity === "recommended") {
             return (
               <div class="my-4 ml-14">
-                <div class="text-3xl">
-                  <span class="text-yellow-500">*</span>
-                  {propertyName}
-                </div>
                 <textarea
-                  class="m-2 h-5/6 w-5/6 resize-y border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-shadow duration-300 focus:shadow-md focus:outline-none"
+                  class="w-5/6 shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  rows="1"
                   placeholder={`${propertyName} is a recommended property.`}
                   value={propertyInfo.value}
                 />
