@@ -77,7 +77,7 @@ const Properties = ({ userInput }) => {
             return (
               <div class="my-4 ml-14">
                 <textarea
-                  class="w-5/6 shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  class="w-5/6 rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a required property!`}
                   value={propertyInfo.value}
@@ -88,7 +88,7 @@ const Properties = ({ userInput }) => {
             return (
               <div class="my-4 ml-14">
                 <textarea
-                  class="w-5/6 shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  class="w-5/6 rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 pt-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a recommended property.`}
                   value={propertyInfo.value}
