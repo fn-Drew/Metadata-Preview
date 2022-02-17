@@ -8,21 +8,28 @@ function FileInput({ setRawJsonInput }) {
       const reader = new FileReader()
 
       reader.onload = () => {
-        // Do whatever you want with the file contents
         const binaryStr = reader.result
         setRawJsonInput(JSON.parse(binaryStr))
       }
       reader.readAsText(file)
     })
   }, [])
-  const { getRootProps, getInputProps } = useDropzone({ onDrop })
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (
-    <div class="flex content-center justify-center" {...getRootProps()}>
+    <div class="flex content-center text-center justify-center" {...getRootProps()}>
       <input {...getInputProps()} />
-      <div class="flex p-8 bg-[#edf9fe] my-10 content-center justify-center border-[1px] border-solid border-[#69cdee] w-1/2">
-        <Upload32 class="" />
-      </div>
+      {
+        isDragActive ?
+          <div class="h-full w-2/3 py-20 my-12 flex rounded-md justify-center shadow-sky-200 shadow-xl bg-[#edf9fe] border-dotted text-[#5fbbda] border-[#69cdee] border-2 outline-4 ring-8 ring-offset-8 ring-[#edf9fe] ring-offset-white ">
+            <Upload32 class="" />
+          </div>
+          :
+          <div class="h-full w-2/3 py-20 my-12 rounded-md shadow-sky-200 shadow-lg bg-white text-[#5fbbda] outline-4 ring-8 ring-offset-8 ring-[#edf9fe] ring-offset-white ">
+            Drag & Drop JSON
+          </div>
+      }
+
     </div>
   )
 }
