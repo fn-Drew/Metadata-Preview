@@ -22,10 +22,10 @@ function FileInput({ setRawJsonInput }) {
       {
         isDragActive ?
           <div class="h-full w-2/3 py-20 my-12 flex rounded-md justify-center shadow-sky-200 shadow-xl bg-[#edf9fe] border-dotted text-[#5fbbda] border-[#69cdee] border-2 outline-4 ring-8 ring-offset-8 ring-[#edf9fe] ring-offset-white ">
-            <Upload32 class="" />
+            <Upload32 class="h-[15%] w-[15%]" />
           </div>
           :
-          <div class="h-full w-2/3 py-20 my-12 rounded-md shadow-sky-200 shadow-lg bg-white text-[#5fbbda] outline-4 ring-8 ring-offset-8 ring-[#edf9fe] ring-offset-white ">
+          <div class="h-full w-2/3 py-20 my-12 text-4xl rounded-md shadow-sky-200 shadow-lg bg-white text-[#5fbbda] outline-4 ring-8 ring-offset-8 ring-[#edf9fe] ring-offset-white ">
             Drag & Drop JSON
           </div>
       }
