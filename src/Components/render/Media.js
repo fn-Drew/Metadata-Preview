@@ -11,7 +11,7 @@ const Media = ({ userInput }) => {
   return (
     <div class="flex flex-col gap-14">
       <div class="pt-8 text-center text-3xl"> {userInput.name} </div>
-      <img alt="" class="w-1/2 place-self-center shadow-md" src={nftPicture} />
+      <img alt="" class="w-1/3 place-self-center shadow-md" src={nftPicture} />
     </div>
   )
 }

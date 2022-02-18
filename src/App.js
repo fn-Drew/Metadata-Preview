@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <div class="w grid h-full w-full grid-cols-2 bg-[#fbfdff] font-body">
+    <div class="w grid h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
       <div>
         <Router>
           <NavBar />
@@ -53,7 +53,7 @@ const App = () => {
           <SchemaUI userInput={rawJsonInput} />
         </div>
       </div>
-      <div>
+      <div class="col-span-2">
         <Media userInput={rawJsonInput} />
         <AnimationUrl animationUrl={rawJsonInput.animation_url} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
