@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <div class="w grid h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
+    <div class="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
       <div>
         <Router>
           <NavBar />
