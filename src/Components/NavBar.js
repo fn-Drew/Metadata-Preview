@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
-    <div class="top-0 mt-2 border-[#69cdee] rounded-lg rounded-b-none border-[1px] border-b-0 absolute">
+    <div class="top-0 ml-6 mt-10 border-[#69cdee] rounded-lg rounded-b-none border-[1px] border-b-0 absolute">
       <ul class="flex divide-x divide-solid divide-[#69cdee]">
         <li class="">
           <Link

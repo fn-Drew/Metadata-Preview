@@ -1,5 +1,5 @@
 import "./App.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Media from "./Components/render/Media"
@@ -12,12 +12,32 @@ import NavBar from "./Components/NavBar"
 import RawJsonInput from "./Components/RawJsonInput"
 import IpfsInput from "./Components/IpfsInput"
 import FileInput from "./Components/FileInput"
+import Awaitable from "./Components/Awaitable"
 
 const App = () => {
   const [rawJsonInput, setRawJsonInput] = useState([])
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    console.debug("[Debug] (Page-Loading-Wrapper)", "Initializing Page + Data.");
+
+    const $ = async () => {
+      if (!loading) {
+        await Awaitable(1000)
+        setLoading(true);
+      }
+    }
+
+    $().finally(() => {
+      console.debug("[Debug] (Page-Loading-Wrapper)", "All Wrapper Promise(s) have Settled.");
+    });
+  }, [loading]);
+
 
   const handleRawJsonInput = (event) => {
     setRawJsonInput(JSON.parse(event.target.value))
+    setLoading(false)
   }
 
   return (
@@ -38,7 +58,7 @@ const App = () => {
               />
               <Route
                 path="FileInput"
-                element={<FileInput setRawJsonInput={setRawJsonInput} />}
+                element={<FileInput setRawJsonInput={setRawJsonInput} loading={loading} setLoading={setLoading} />}
               />
               <Route
                 path="*"
@@ -58,7 +78,7 @@ const App = () => {
       </div>
 
       <div class="col-span-2">
-        <Media userInput={rawJsonInput} />
+        <Media userInput={rawJsonInput} loading={loading} setLoading={setLoading} />
         <AnimationUrl animationUrl={rawJsonInput.animation_url} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
         <div class="text-center">

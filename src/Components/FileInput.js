@@ -1,13 +1,24 @@
 import React, { useCallback } from "react"
 import { useDropzone } from "react-dropzone"
 import { Upload32 } from "@carbon/icons-react"
+import ClipLoader from "react-spinners/ClipLoader"
 
-function FileInput({ setRawJsonInput }) {
+function FileInput({ setRawJsonInput, setLoading, loading }) {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
 
+      reader.addEventListener('loadstart', () => {
+        setLoading(true)
+        console.log('Loading set to True')
+      })
+      reader.addEventListener('loadend', () => {
+        setLoading(false)
+        console.log('Loading set to False')
+      })
+
       reader.onload = () => {
+        console.log('File Uploaded')
         const binaryStr = reader.result
         setRawJsonInput(JSON.parse(binaryStr))
       }
@@ -17,7 +28,7 @@ function FileInput({ setRawJsonInput }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (
-    <div class="flex content-center pt-12 text-center justify-center" {...getRootProps()}>
+    <div class="flex content-center ml-6 pt-12 mt-8 text-center justify-center" {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?
@@ -32,6 +43,11 @@ function FileInput({ setRawJsonInput }) {
             </p>
           </div>
       }
+      {/* {
+        (!loading) ?
+          null :
+          <ClipLoader loading={loading} size={150} />
+      } */}
     </div>
   )
 }
