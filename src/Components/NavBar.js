@@ -6,7 +6,7 @@ const NavBar = () => {
       <ul class="flex border-b">
         <li class="-mb-px-px mr-1">
           <Link
-            className="inline-block rounded-t border-l border-t border-r py-2 px-4 font-semibold text-blue-700"
+            className="inline-block rounded-t border-l border-t border-r py-2 px-4 font-semibold text-[#69cdee] hover:text-sky-500"
             to="/RawJsonInput"
           >
             Raw JSON
@@ -14,7 +14,7 @@ const NavBar = () => {
         </li>
         <li class="mr-1">
           <Link
-            className="inline-block py-2 px-4 font-semibold text-blue-500 hover:text-blue-800"
+            className="inline-block py-2 px-4 font-semibold text-[#69cdee] hover:text-sky-500"
             to="/IPFSinput"
           >
             Ipfs
@@ -22,7 +22,7 @@ const NavBar = () => {
         </li>
         <li class="mr-1">
           <Link
-            className="inline-block py-2 px-4 font-semibold text-blue-500 hover:text-blue-800"
+            className="inline-block py-2 px-4 font-semibold text-[#69cdee]  hover:text-sky-500"
             to="/FileInput"
           >
             File
