@@ -22,37 +22,41 @@ const App = () => {
 
   return (
     <div class="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
+
       <div>
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route
-              path="RawJsonInput"
-              element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
-            />
-            <Route
-              path="IPFSinput"
-              element={<IpfsInput setRawJsonInput={setRawJsonInput} />}
-            />
-            <Route
-              path="FileInput"
-              element={<FileInput setRawJsonInput={setRawJsonInput} />}
-            />
-            <Route
-              path="*"
-              element={
-                <div class="py-8 text-center text-4xl">
-                  <p> Choose an input method </p>
-                </div>
-              }
-            />
-          </Routes>
-        </Router>
+        <div class="flex justify-center">
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route
+                path="RawJsonInput"
+                element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
+              />
+              <Route
+                path="IPFSinput"
+                element={<IpfsInput setRawJsonInput={setRawJsonInput} />}
+              />
+              <Route
+                path="FileInput"
+                element={<FileInput setRawJsonInput={setRawJsonInput} />}
+              />
+              <Route
+                path="*"
+                element={
+                  <div class="py-8 text-center text-4xl">
+                    <p> Choose an input method </p>
+                  </div>
+                }
+              />
+            </Routes>
+          </Router>
+        </div>
 
         <div>
           <SchemaUI userInput={rawJsonInput} />
         </div>
       </div>
+
       <div class="col-span-2">
         <Media userInput={rawJsonInput} />
         <AnimationUrl animationUrl={rawJsonInput.animation_url} />

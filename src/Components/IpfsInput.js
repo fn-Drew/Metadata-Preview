@@ -19,9 +19,10 @@ const IpfsInput = ({ setRawJsonInput }) => {
   }
 
   return (
-    <div class="mx-14 w-full pt-12">
+    <div class="pt-12">
       <textarea
-        class="h-5/6 w-5/6 resize-y border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2"
+        class="border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-4"
+        rows="5"
         value={ipfsInput}
         onInput={handleIpfsInput}
         placeholder="Input IPFS link..."
