@@ -1,4 +1,5 @@
 const Properties = ({ userInput }) => {
+
   const properties = {
     image: {
       value: userInput.image,
@@ -66,7 +67,7 @@ const Properties = ({ userInput }) => {
             return (
               <div className="my-4">
                 <textarea
-                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y focus:border-b-2 border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={propertyName}
                   value={propertyInfo.value}
@@ -77,7 +78,7 @@ const Properties = ({ userInput }) => {
             return (
               <div className="my-4">
                 <textarea
-                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y focus:border-b-2 border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a required property!`}
                   value={propertyInfo.value}
@@ -88,7 +89,7 @@ const Properties = ({ userInput }) => {
             return (
               <div className="my-4">
                 <textarea
-                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y focus:border-b-2 border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a recommended property.`}
                   value={propertyInfo.value}
