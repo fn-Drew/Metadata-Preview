@@ -59,14 +59,14 @@ const Properties = ({ userInput }) => {
 
   return (
     <div>
-      <div class="pb-4 pt-12 ml-6 text-center text-4xl"> Properties </div>
-      <div class="mb-12 ml-6">
+      <div className="pb-4 pt-12 ml-6 text-center text-4xl"> Properties </div>
+      <div className="mb-12 ml-6">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
-              <div class="my-4">
+              <div className="my-4">
                 <textarea
-                  class="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={propertyName}
                   value={propertyInfo.value}
@@ -75,9 +75,9 @@ const Properties = ({ userInput }) => {
             )
           } else if (propertyInfo.necessity === "required") {
             return (
-              <div class="my-4">
+              <div className="my-4">
                 <textarea
-                  class="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a required property!`}
                   value={propertyInfo.value}
@@ -86,9 +86,9 @@ const Properties = ({ userInput }) => {
             )
           } else if (propertyInfo.necessity === "recommended") {
             return (
-              <div class="my-4">
+              <div className="my-4">
                 <textarea
-                  class="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
+                  className="w-full rounded-lg shadow-inner transition-colors focus:bg-white focus:shadow-md px-4 p-4 resize-y border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] focus:outline-none"
                   rows="1"
                   placeholder={`${propertyName} is a recommended property.`}
                   value={propertyInfo.value}

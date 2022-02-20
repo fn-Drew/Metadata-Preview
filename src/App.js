@@ -41,10 +41,10 @@ const App = () => {
   }
 
   return (
-    <div class="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
+    <div className="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
 
       <div>
-        <div class="flex justify-center">
+        <div className="flex justify-center">
           <Router>
             <NavBar />
             <Routes>
@@ -63,7 +63,7 @@ const App = () => {
               <Route
                 path="*"
                 element={
-                  <div class="py-8 text-center text-4xl">
+                  <div className="py-8 text-center text-4xl">
                     <p> Choose an input method </p>
                   </div>
                 }
@@ -77,11 +77,11 @@ const App = () => {
         </div>
       </div>
 
-      <div class="col-span-2">
+      <div className="col-span-2">
         <Media userInput={rawJsonInput} loading={loading} setLoading={setLoading} />
         <AnimationUrl animationUrl={rawJsonInput.animation_url} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
-        <div class="text-center">
+        <div className="text-center">
           <Description description={rawJsonInput.description} />
           <Attributes attributes={rawJsonInput.attributes} />
         </div>
