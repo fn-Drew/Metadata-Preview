@@ -3,6 +3,10 @@ const AnimationUrl = ({ animationUrl }) => {
     return null
   }
 
+  if (animationUrl.substring(0, 7) === "ipfs://") {
+    animationUrl = `https://ipfs.io/ipfs/${animationUrl.slice(7)}`
+  }
+
   return (
     <div className="flex flex-col">
       <video
@@ -10,8 +14,7 @@ const AnimationUrl = ({ animationUrl }) => {
         className="w-1/2 place-self-center py-12"
         controls
       >
-        {" "}
-        <source src={`https://ipfs.io/ipfs/${animationUrl.slice(7)}`} />{" "}
+        <source src={animationUrl} />
       </video>
     </div>
   )
