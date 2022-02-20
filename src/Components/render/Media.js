@@ -22,9 +22,9 @@ const Media = ({ userInput, loading }) => {
     <div className="flex flex-col place-items-center gap-14">
       <div className="pt-8 text-center text-3xl"> {userInput.name} </div>
       {
-        (loading) ?
+        (!loading) ?
           <img alt="" className="w-1/3 shadow-lg" src={nftPicture} /> :
-          <ClipLoader loading={!loading} size={50} />
+          <ClipLoader loading={loading} size={50} />
       }
     </div>
   )

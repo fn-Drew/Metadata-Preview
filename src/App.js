@@ -16,16 +16,16 @@ import Awaitable from "./Components/Awaitable"
 
 const App = () => {
   const [rawJsonInput, setRawJsonInput] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
 
   useEffect(() => {
     console.debug("[Debug] (Page-Loading-Wrapper)", "Initializing Page + Data.");
 
     const $ = async () => {
-      if (!loading) {
+      if (loading) {
         await Awaitable(1000)
-        setLoading(true);
+        setLoading(false);
       }
     }
 
@@ -37,7 +37,7 @@ const App = () => {
 
   const handleRawJsonInput = (event) => {
     setRawJsonInput(JSON.parse(event.target.value))
-    setLoading(false)
+    setLoading(true)
   }
 
   return (
