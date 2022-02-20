@@ -32,11 +32,14 @@ function FileInput({ setRawJsonInput, setLoading, loading }) {
       <input {...getInputProps()} />
       {
         isDragActive ?
-          <div className="flex shadow-inner transition-all hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
-            <Upload32 className="" />
+          <div className="flex shadow-lg  hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[2.45rem]">
+            <Upload32 className="animate-[spin_1s_ease-in-out_1]" />
+            <p className="text-2xl text-[#a3aab6]">
+              Drop your file!
+            </p>
           </div>
           :
-          <div className="flex shadow-inner transition-all hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
+          <div className="flex shadow-inner hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
             <Upload32 />
             <p className="text-2xl text-[#a3aab6]">
               Drag & Drop JSON
