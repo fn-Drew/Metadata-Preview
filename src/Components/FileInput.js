@@ -32,8 +32,8 @@ function FileInput({ setRawJsonInput, setLoading, loading }) {
       <input {...getInputProps()} />
       {
         isDragActive ?
-          <div className="resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-14 px-4">
-            <Upload32 className="h-3/4 w-3/4" />
+          <div className="flex shadow-inner transition-all hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
+            <Upload32 className="" />
           </div>
           :
           <div className="flex shadow-inner transition-all hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
