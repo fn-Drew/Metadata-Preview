@@ -79,7 +79,7 @@ const App = () => {
 
       <div className="col-span-2">
         <Media userInput={rawJsonInput} loading={loading} setLoading={setLoading} />
-        <AnimationUrl animationUrl={rawJsonInput.animation_url} />
+        <AnimationUrl animationUrl={rawJsonInput.animation_url} loading={loading} />
         <ExternalUrl externalUrl={rawJsonInput.external_url} />
         <div className="text-center">
           <Description description={rawJsonInput.description} />

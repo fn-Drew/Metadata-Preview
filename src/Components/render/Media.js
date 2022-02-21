@@ -24,7 +24,8 @@ const Media = ({ userInput, loading }) => {
       {
         (!loading) ?
           <img alt="" className="w-64 shadow-lg" src={nftPicture} /> :
-          <ClipLoader loading={loading} size={50} />
+          // <ClipLoader loading={loading} size={50} />
+          <div className="bg-slate-700 animate-pulse shadow-lg rounded-md aspect-video w-64"> </div>
       }
     </div>
   )

@@ -1,4 +1,6 @@
-const AnimationUrl = ({ animationUrl }) => {
+import ClipLoader from "react-spinners/ClipLoader"
+
+const AnimationUrl = ({ animationUrl, loading }) => {
   if (!animationUrl) {
     return null
   }
@@ -8,14 +10,20 @@ const AnimationUrl = ({ animationUrl }) => {
   }
 
   return (
-    <div className="flex flex-col">
-      <video
-        onLoadStart="video.volume=0.01"
-        className="w-1/2 place-self-center py-12"
-        controls
-      >
-        <source src={animationUrl} />
-      </video>
+    <div className="flex place-items-center flex-col">
+      {
+        (!loading) ?
+          <video
+            onLoadStart="video.volume=0.01"
+            className="w-1/2 py-12"
+            controls
+          >
+            <source src={animationUrl} />
+          </video>
+          :
+          // <ClipLoader loading={loading} size={150} />
+          <div className="bg-slate-700 animate-pulse shadow rounded-md aspect-video w-1/2 my-12"> </div>
+      }
     </div>
   )
 }
