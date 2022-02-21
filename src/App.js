@@ -54,7 +54,7 @@ const App = () => {
               />
               <Route
                 path="IPFSinput"
-                element={<IpfsInput setRawJsonInput={setRawJsonInput} />}
+                element={<IpfsInput setRawJsonInput={setRawJsonInput} setLoading={setLoading} />}
               />
               <Route
                 path="FileInput"

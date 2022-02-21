@@ -2,11 +2,18 @@ import { useEffect, useState } from "react"
 
 import axios from "axios"
 
-const IpfsInput = ({ setRawJsonInput }) => {
-  const [ipfsInput, setIpfsInput] = useState([])
+const IpfsInput = ({ setRawJsonInput, setLoading }) => {
+  const [ipfsInput, setIpfsInput] = useState([''])
+
+  if (Object.prototype.toString.call(ipfsInput) === "[object String]" && ipfsInput.substring(0, 7) === "ipfs://") {
+    console.log(ipfsInput)
+    setIpfsInput(`https://ipfs.io/ipfs/${ipfsInput.slice(7)}`)
+  }
 
   const hook = () => {
+    if (!ipfsInput) return null
     axios.get(ipfsInput).then((response) => {
+
       const jsonOutput = response.data
       setRawJsonInput(jsonOutput)
     })
@@ -16,6 +23,7 @@ const IpfsInput = ({ setRawJsonInput }) => {
   const handleIpfsInput = (event) => {
     setIpfsInput(event.target.value)
     hook()
+    setLoading(true)
   }
 
   return (
