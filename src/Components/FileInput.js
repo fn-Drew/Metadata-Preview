@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone"
 import { Upload32 } from "@carbon/icons-react"
 import ClipLoader from "react-spinners/ClipLoader"
 
-function FileInput({ setRawJsonInput, setLoading, loading }) {
+function FileInput({ setJsonMetadata, setLoading, loading }) {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
@@ -20,7 +20,7 @@ function FileInput({ setRawJsonInput, setLoading, loading }) {
       reader.onload = () => {
         console.log('File Uploaded')
         const binaryStr = reader.result
-        setRawJsonInput(JSON.parse(binaryStr))
+        setJsonMetadata(JSON.parse(binaryStr))
       }
       reader.readAsText(file)
     })

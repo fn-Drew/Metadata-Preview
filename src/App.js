@@ -15,7 +15,12 @@ import FileInput from "./Components/FileInput"
 import Awaitable from "./Components/Awaitable"
 
 const App = () => {
-  const [rawJsonInput, setRawJsonInput] = useState([])
+  const [jsonMetadata, setJsonMetadata] = useState([])
+  const [userInput, setUserInput] = useState([
+    { rawJson: '' },
+    { ipfs: '' },
+    { file: '' }
+  ])
   const [loading, setLoading] = useState(false)
 
 
@@ -35,8 +40,8 @@ const App = () => {
   }, [loading]);
 
 
-  const handleRawJsonInput = (event) => {
-    setRawJsonInput(JSON.parse(event.target.value))
+  const handleStringToJson = (event) => {
+    setJsonMetadata(JSON.parse(event.target.value))
     setLoading(true)
   }
 
@@ -50,15 +55,15 @@ const App = () => {
             <Routes>
               <Route
                 path="RawJsonInput"
-                element={<RawJsonInput handleRawJsonInput={handleRawJsonInput} />}
+                element={<RawJsonInput handleStringToJson={handleStringToJson} />}
               />
               <Route
                 path="IPFSinput"
-                element={<IpfsInput setRawJsonInput={setRawJsonInput} setLoading={setLoading} />}
+                element={<IpfsInput setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
               />
               <Route
                 path="FileInput"
-                element={<FileInput setRawJsonInput={setRawJsonInput} loading={loading} setLoading={setLoading} />}
+                element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} />}
               />
               <Route
                 path="*"
@@ -73,17 +78,17 @@ const App = () => {
         </div>
 
         <div>
-          <SchemaUI userInput={rawJsonInput} />
+          <SchemaUI userInput={jsonMetadata} />
         </div>
       </div>
 
       <div className="col-span-2">
-        <Media userInput={rawJsonInput} loading={loading} setLoading={setLoading} />
-        <AnimationUrl animationUrl={rawJsonInput.animation_url} loading={loading} />
-        <ExternalUrl externalUrl={rawJsonInput.external_url} />
+        <Media userInput={jsonMetadata} loading={loading} setLoading={setLoading} />
+        <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
+        <ExternalUrl externalUrl={jsonMetadata.external_url} />
         <div className="text-center">
-          <Description description={rawJsonInput.description} />
-          <Attributes attributes={rawJsonInput.attributes} />
+          <Description description={jsonMetadata.description} />
+          <Attributes attributes={jsonMetadata.attributes} />
         </div>
       </div>
     </div>
