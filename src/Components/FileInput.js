@@ -9,12 +9,12 @@ function FileInput({ setRawJsonInput, setLoading, loading }) {
       const reader = new FileReader()
 
       reader.addEventListener('loadstart', () => {
-        setLoading(true)
-        console.log('Loading set to True')
-      })
-      reader.addEventListener('loadend', () => {
         setLoading(false)
         console.log('Loading set to False')
+      })
+      reader.addEventListener('loadend', () => {
+        setLoading(true)
+        console.log('Loading set to True')
       })
 
       reader.onload = () => {
@@ -46,11 +46,11 @@ function FileInput({ setRawJsonInput, setLoading, loading }) {
             </p>
           </div>
       }
-      {/* {
-        (!loading) ?
+      {
+        (loading) ?
           null :
           <ClipLoader loading={loading} size={150} />
-      } */}
+      }
     </div>
   )
 }
