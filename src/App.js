@@ -16,11 +16,11 @@ import Awaitable from "./Components/Awaitable"
 
 const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState([])
-  const [userInput, setUserInput] = useState([
-    { rawJson: '' },
-    { ipfs: '' },
-    { file: '' }
-  ])
+
+  const [rawJson, setRawJson] = useState([])
+  const [ipfs, setIpfs] = useState([])
+  const [file, setFile] = useState([])
+
   const [loading, setLoading] = useState(false)
 
 
@@ -39,10 +39,16 @@ const App = () => {
     });
   }, [loading]);
 
+  const handleRawJsonInput = (event) => {
+    setRawJson(event.target.value)
+    handleStringToJson(event)
+  }
 
   const handleStringToJson = (event) => {
     setJsonMetadata(JSON.parse(event.target.value))
+    setRawJson(event.target.value)
     setLoading(true)
+    console.log('HANDLE STRING TO JSON')
   }
 
   return (
@@ -55,11 +61,11 @@ const App = () => {
             <Routes>
               <Route
                 path="RawJsonInput"
-                element={<RawJsonInput handleStringToJson={handleStringToJson} />}
+                element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} />}
               />
               <Route
                 path="IPFSinput"
-                element={<IpfsInput setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
+                element={<IpfsInput setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
               />
               <Route
                 path="FileInput"

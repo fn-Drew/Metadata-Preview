@@ -1,5 +1,4 @@
-const RawJsonInput = ({ handleStringToJson }) => {
-
+const RawJsonInput = ({ handleStringToJson, rawJson }) => {
   return (
     <div className="pt-12 ml-6 mt-8">
       <textarea
@@ -7,6 +6,7 @@ const RawJsonInput = ({ handleStringToJson }) => {
         rows="5"
         placeholder="Input Metadata..."
         onInput={handleStringToJson}
+        value={rawJson}
       // onInputCapture={(event) => {
       //   console.log(event)
       //   setLoading(true)
