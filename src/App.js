@@ -69,7 +69,7 @@ const App = () => {
               />
               <Route
                 path="FileInput"
-                element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} />}
+                element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
               />
               <Route
                 path="*"
