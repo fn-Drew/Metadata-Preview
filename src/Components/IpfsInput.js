@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 
 import axios from "axios"
 
-const IpfsInput = ({ setJsonMetadata, setLoading, handleStringToJson, setRawJson }) => {
-  const [ipfsInput, setIpfsInput] = useState([])
+const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handleStringToJson, setRawJson }) => {
 
   if (Object.prototype.toString.call(ipfsInput) === "[object String]" && ipfsInput.substring(0, 7) === "ipfs://") {
     console.log(ipfsInput)

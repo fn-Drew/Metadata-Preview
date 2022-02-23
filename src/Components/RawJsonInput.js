@@ -1,4 +1,5 @@
 const RawJsonInput = ({ handleStringToJson, rawJson }) => {
+
   return (
     <div className="pt-12 ml-6 mt-8">
       <textarea

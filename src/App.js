@@ -18,7 +18,7 @@ const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState([])
 
   const [rawJson, setRawJson] = useState([])
-  const [ipfs, setIpfs] = useState([])
+  const [ipfsInput, setIpfsInput] = useState([])
   const [file, setFile] = useState([])
 
   const [loading, setLoading] = useState(false)
@@ -65,7 +65,7 @@ const App = () => {
               />
               <Route
                 path="IPFSinput"
-                element={<IpfsInput setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
+                element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
               />
               <Route
                 path="FileInput"
