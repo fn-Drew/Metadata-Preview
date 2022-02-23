@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { Awaitable } from "../Awaitable"
 import ClipLoader from "react-spinners/ClipLoader"
+import ExternalUrl from "./ExternalUrl"
 
-const Media = ({ userInput, loading }) => {
+const Media = ({ userInput, loading, jsonMetadata }) => {
 
   if (!userInput.hasOwnProperty("image"))
     return (
@@ -19,8 +20,9 @@ const Media = ({ userInput, loading }) => {
   }
 
   return (
-    <div className="flex flex-col place-items-center gap-14">
+    <div className="flex flex-col place-items-center">
       <div className="pt-8 text-center text-3xl"> {userInput.name} </div>
+      <ExternalUrl externalUrl={jsonMetadata.external_url} />
       {
         (!loading) ?
           <img alt="" className="w-64 shadow-lg" src={nftPicture} /> :
