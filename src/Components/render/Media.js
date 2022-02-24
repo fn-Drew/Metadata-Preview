@@ -3,9 +3,9 @@ import { Awaitable } from "../Awaitable"
 import ClipLoader from "react-spinners/ClipLoader"
 import ExternalUrl from "./ExternalUrl"
 
-const Media = ({ userInput, loading, jsonMetadata }) => {
+const Media = ({ jsonMetadata, loading }) => {
 
-  if (!userInput.hasOwnProperty("image"))
+  if (!jsonMetadata.hasOwnProperty("image"))
     return (
       <div className="flex flex-col place-items-center gap-14">
         <div className="pt-8 text-center text-3xl"> Your NFT #00 </div>
@@ -13,7 +13,7 @@ const Media = ({ userInput, loading, jsonMetadata }) => {
       </div>
     )
 
-  let nftPicture = userInput.image
+  let nftPicture = jsonMetadata.image
 
   if (nftPicture.substring(0, 7) === "ipfs://") {
     nftPicture = `https://ipfs.io/ipfs/${nftPicture.slice(7)}`
@@ -21,7 +21,7 @@ const Media = ({ userInput, loading, jsonMetadata }) => {
 
   return (
     <div className="flex flex-col place-items-center">
-      <div className="pt-8 text-center text-3xl"> {userInput.name} </div>
+      <div className="pt-8 text-center text-3xl"> {jsonMetadata.name} </div>
       <ExternalUrl externalUrl={jsonMetadata.external_url} />
       {
         (!loading) ?

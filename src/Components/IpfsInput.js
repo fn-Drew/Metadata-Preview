@@ -5,7 +5,6 @@ import axios from "axios"
 const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handleStringToJson, setRawJson }) => {
 
   if (Object.prototype.toString.call(ipfsInput) === "[object String]" && ipfsInput.substring(0, 7) === "ipfs://") {
-    console.log(ipfsInput)
     setIpfsInput(`https://ipfs.io/ipfs/${ipfsInput.slice(7)}`)
   }
 
@@ -22,7 +21,6 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
 
   const handleIpfsInput = (event) => {
     setIpfsInput(event.target.value)
-    console.log(ipfsInput)
     hook()
     setLoading(true)
     handleStringToJson(event)

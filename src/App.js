@@ -6,7 +6,7 @@ import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
 import Attributes from "./Components/render/Attributes"
 import ExternalUrl from "./Components/render/ExternalUrl"
-import SchemaUI from "./Components/render/Properties.js"
+import Properties from "./Components/render/Properties.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
 import NavBar from "./Components/NavBar"
 import RawJsonInput from "./Components/RawJsonInput"
@@ -84,12 +84,12 @@ const App = () => {
         </div>
 
         <div>
-          <SchemaUI userInput={jsonMetadata} />
+          <Properties setRawJson={setRawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
         </div>
       </div>
 
       <div className="col-span-2">
-        <Media jsonMetadata={jsonMetadata} userInput={jsonMetadata} loading={loading} setLoading={setLoading} />
+        <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
         <div className="text-center">
           <Description description={jsonMetadata.description} />
