@@ -55,7 +55,7 @@ const App = () => {
     <div className="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
 
       <div>
-        <div className="flex justify-center">
+        <div className="grid grid-flow-row pt-8 grid-rows-6 justify-items-center bg-green-100">
           <Router>
             <NavBar />
             <Routes>
