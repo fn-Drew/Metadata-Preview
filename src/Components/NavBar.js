@@ -6,7 +6,7 @@ const NavBar = () => {
       <ul className="flex justify-around divide-x divide-solid text-center min-h-0 overflow-x-hidden divide-[#69cdee]">
         <li className="hover:shadow-inner truncate w-2/3 active:shadow-slate-300">
           <Link
-            className="font-semibold text-[#69cdee] hover:text-sky-500"
+            className="inline-block w-full font-semibold text-[#69cdee] hover:text-sky-500"
             to="/RawJsonInput"
           >
             Raw JSON
@@ -14,7 +14,7 @@ const NavBar = () => {
         </li>
         <li className="hover:shadow-inner w-1/3 active:shadow-slate-300">
           <Link
-            className="font-semibold text-[#69cdee] hover:text-sky-500"
+            className="inline-block w-full font-semibold text-[#69cdee] hover:text-sky-500"
             to="/IPFSinput"
           >
             Ipfs
@@ -22,7 +22,7 @@ const NavBar = () => {
         </li>
         <li className="hover:shadow-inner w-1/3 active:shadow-slate-300">
           <Link
-            className="font-semibold text-[#69cdee]  hover:text-sky-500"
+            className="inline-block w-full font-semibold text-[#69cdee]  hover:text-sky-500"
             to="/FileInput"
           >
             File

@@ -27,15 +27,15 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
   }
 
   return (
-    <div className="pt-12">
+    <div className="row-span-5 w-2/3">
       <textarea
-        className="border-[1px] focus:border-sky-500 transition-colors focus:shadow-inner focus:outline-none mt-8 border-solid ml-6 rounded-b-lg border-[#69cdee] bg-[#edf9fe] p-[.95rem]"
+        className="resize-none p-2 border-[1px] w-full focus:border-sky-500 transition-colors focus:shadow-inner focus:outline-none border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe]"
         rows="5"
         value={ipfsInput}
         onInput={handleIpfsInput}
         placeholder="Input IPFS link..."
       />
-
+      {/* border-[1px] focus:border-sky-500 transition-colors focus:shadow-inner focus:outline-none mt-8 border-solid ml-6 rounded-b-lg border-[#69cdee] bg-[#edf9fe] p-[.95rem] */}
     </div >
   )
 }

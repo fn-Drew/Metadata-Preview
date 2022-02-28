@@ -74,7 +74,7 @@ const App = () => {
               <Route
                 path="*"
                 element={
-                  <div className="flex text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem] ml-6 pt-12 mt-20">
+                  <div className="flex row-span-5 w-2/3 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem]">
                     <p> Choose an input method </p>
                   </div>
                 }

@@ -29,18 +29,18 @@ function FileInput({ setJsonMetadata, setLoading, loading, setRawJson }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (
-    <div className="flex content-center ml-6 pt-12 mt-8 text-center justify-center" {...getRootProps()}>
+    <div className="flex row-span-5 w-2/3 content-center text-center justify-center" {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?
-          <div className="flex shadow-lg  hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[2.45rem]">
+          <div className="flex shadow-lg w-full hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe]">
             <Upload32 className="animate-[spin_1s_ease-in-out_1]" />
             <p className="text-2xl text-[#a3aab6]">
               Drop your file!
             </p>
           </div>
           :
-          <div className="flex shadow-inner hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-4">
+          <div className="flex shadow-inner w-full pt-4 hover:shadow-blue-300 active:shadow-blue-600 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe]">
             <Upload32 />
             <p className="text-2xl text-[#a3aab6]">
               Drag & Drop JSON
