@@ -9,6 +9,6 @@
     @apply inline-block w-full font-semibold text-[#69cdee] hover:text-sky-500;
   }
   .string-input {
-    @apply w-full resize-none rounded-b-lg border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-colors focus:border-sky-500 focus:shadow-inner focus:outline-none;
+    @apply h-full w-full resize rounded-b-lg border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-colors focus:border-sky-500 focus:shadow-inner focus:outline-none;
   }
 }

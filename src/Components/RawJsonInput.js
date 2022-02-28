@@ -1,10 +1,9 @@
 const RawJsonInput = ({ handleStringToJson, rawJson }) => {
 
   return (
-    <div className="row-span-5 w-2/3">
+    <div className="row-span-9 h-[20vh] w-11/12">
       <textarea
         className="string-input"
-        rows="5"
         placeholder="Input Metadata..."
         onInput={handleStringToJson}
         value={rawJson}
