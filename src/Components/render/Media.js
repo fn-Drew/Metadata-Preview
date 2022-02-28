@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-import { Awaitable } from "../Awaitable"
 import ClipLoader from "react-spinners/ClipLoader"
 import ExternalUrl from "./ExternalUrl"
 
@@ -20,7 +18,7 @@ const Media = ({ jsonMetadata, loading }) => {
   }
 
   return (
-    <div className="flex flex-col place-items-center">
+    <div className="flex flex-col place-items-center gap-14 pb-10">
       <div className="pt-8 text-center text-3xl"> {jsonMetadata.name} </div>
       <ExternalUrl externalUrl={jsonMetadata.external_url} />
       {

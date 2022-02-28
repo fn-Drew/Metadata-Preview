@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Media from "./Components/render/Media"
 import Description from "./Components/render/Description"
 import Attributes from "./Components/render/Attributes"
-import ExternalUrl from "./Components/render/ExternalUrl"
 import Properties from "./Components/render/Properties.js"
 import AnimationUrl from "./Components/render/AnimationUrl.js"
 import NavBar from "./Components/NavBar"
@@ -19,7 +18,6 @@ const App = () => {
 
   const [rawJson, setRawJson] = useState([])
   const [ipfsInput, setIpfsInput] = useState([])
-  const [file, setFile] = useState([])
 
   const [loading, setLoading] = useState(false)
 
@@ -52,10 +50,10 @@ const App = () => {
   }
 
   return (
-    <div className="grid gap-8 h-full w-full grid-cols-3 bg-[#fbfdff] font-body">
+    <div className="grid gap-8 h-screen w-screen grid-cols-3 bg-[#fbfdff] font-body">
 
       <div>
-        <div className="grid grid-flow-row pt-8 grid-rows-6 justify-items-center bg-green-100">
+        <div className="grid grid-flow-row pt-8 grid-rows-6 justify-items-center ">
           <Router>
             <NavBar />
             <Routes>
@@ -92,7 +90,7 @@ const App = () => {
         <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
         <div className="text-center">
-          <Description description={jsonMetadata.description} />
+          {/* <Description description={jsonMetadata.description} /> */}
           <Attributes attributes={jsonMetadata.attributes} />
         </div>
       </div>
