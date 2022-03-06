@@ -21,6 +21,11 @@ const App = () => {
 
   const [loading, setLoading] = useState(false)
 
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
 
   useEffect(() => {
     console.debug("[Debug] (Page-Loading-Wrapper)", "Initializing Page + Data.");
@@ -83,7 +88,7 @@ const App = () => {
   }
 
   return (
-    <div className="grid gap-8 h-screen w-screen grid-cols-3 bg-[#fbfdff] font-body">
+    <div className="grid gap-8 h-screen w-screen grid-cols-3 dark:bg-[#0b0d15] bg-[#fbfdff] font-body">
 
       <div className="col-span-2">
         <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
