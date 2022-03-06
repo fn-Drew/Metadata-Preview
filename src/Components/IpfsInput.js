@@ -27,7 +27,7 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
   }
 
   return (
-    <div className="row-span-5 w-2/3">
+    <div className="row-span-5 w-11/12">
       <textarea
         className="string-input"
         rows="5"

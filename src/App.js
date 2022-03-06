@@ -21,11 +21,11 @@ const App = () => {
 
   const [loading, setLoading] = useState(false)
 
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+  // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  //   document.documentElement.classList.add('dark')
+  // } else {
+  //   document.documentElement.classList.remove('dark')
+  // }
 
   useEffect(() => {
     console.debug("[Debug] (Page-Loading-Wrapper)", "Initializing Page + Data.");
@@ -51,44 +51,10 @@ const App = () => {
     setJsonMetadata(JSON.parse(event.target.value))
     setRawJson(event.target.value)
     setLoading(true)
-    console.log('HANDLE STRING TO JSON')
-  }
-
-  if (!jsonMetadata) {
-    console.log('ioenaoirestniarosetn')
-    return (
-      <div className="grid grid-flow-row h-96 pt-8 grid-rows-10 justify-items-center ">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route
-              path="RawJsonInput"
-              element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} />}
-            />
-            <Route
-              path="IPFSinput"
-              element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
-            />
-            <Route
-              path="FileInput"
-              element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
-            />
-            <Route
-              path="*"
-              element={
-                <div className="flex row-span-5 w-2/3 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem]">
-                  <p> Choose an input method </p>
-                </div>
-              }
-            />
-          </Routes>
-        </Router>
-      </div>
-    )
   }
 
   return (
-    <div className="grid gap-8 h-screen w-screen grid-cols-3 dark:bg-[#0b0d15] bg-[#fbfdff] font-body">
+    <div className="grid gap-8 h-screen w-screen grid-cols-3 bg-[#fbfdff] font-body">
 
       <div className="col-span-2">
         <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
@@ -132,6 +98,7 @@ const App = () => {
           <Attributes attributes={jsonMetadata.attributes} />
         </div>
       </div>
+
     </div>
   )
 }

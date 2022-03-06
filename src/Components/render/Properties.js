@@ -67,13 +67,13 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
   }
 
   return (
-    <div>
+    <div className="">
       <div className="pb-4 pt-12 ml-6 text-center text-4xl"> Properties </div>
-      <div className="mb-12 ml-6">
+      <div className="flex w-full flex-col place-items-center">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
-              <div className="my-4">
+              <div className="my-4 w-11/12">
                 <textarea
                   className="property-input"
                   rows="1"
@@ -85,7 +85,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
             )
           } else if (propertyInfo.necessity === "required") {
             return (
-              <div className="my-4">
+              <div className="my-4 w-11/12">
                 <textarea
                   className="property-input"
                   rows="1"
@@ -97,7 +97,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
             )
           } else if (propertyInfo.necessity === "recommended") {
             return (
-              <div className="my-4">
+              <div className="my-4 w-11/12">
                 <textarea
                   className="property-input"
                   rows="1"
