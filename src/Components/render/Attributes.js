@@ -4,9 +4,9 @@ const Attributes = ({ attributes }) => {
   }
 
   return (
-    <div className="grid grid-cols-2 bg-inherit">
+    <div className="grid gap-8 grid-cols-2 bg-inherit">
       {attributes.map((attribute) => (
-        <div className="my-4 mx-8 rounded-md border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] py-4 shadow-md">
+        <div className="truncate rounded-md border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] py-4 shadow-md">
           <div className="text-sm font-bold text-[#15b2e5]">
             {attribute.trait_type.toUpperCase()}
           </div>

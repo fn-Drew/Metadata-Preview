@@ -1,15 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;800&display=swap"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Plex-Sans";
+    src: url("./fonts/IBM-Plex-Sans/IBMPlexSans-Text.ttf");
+  }
+  @font-face {
+    font-family: "Plex-Mono";
+    src: url("./fonts/IBM-Plex-Mono/IBMPlexMono-Text.ttf");
+  }
+}
 
 @layer components {
   .navbar-link {
     @apply inline-block w-full font-semibold text-[#69cdee] hover:text-sky-500;
   }
   .string-input {
-    @apply h-full w-full resize rounded-b-lg border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-colors focus:border-sky-500 focus:shadow-inner focus:outline-none;
+    @apply h-full w-full resize-none rounded-b-lg border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] p-2 transition-colors focus:border-sky-500 focus:shadow-inner focus:outline-none;
   }
   .property-input {
     @apply w-full resize-y rounded-lg border-b-[1px] border-solid border-[#69cdee] bg-[#f8fafb] p-4 px-4 shadow-inner transition-colors focus:border-b-2 focus:bg-white focus:shadow-md focus:outline-none;
