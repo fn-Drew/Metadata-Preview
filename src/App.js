@@ -41,12 +41,14 @@ const App = () => {
 
   const handleRawJsonInput = (event) => {
     setRawJson(event.target.value)
+    console.log(event.target.value)
     handleStringToJson(event)
   }
 
   const handleStringToJson = (event) => {
     setJsonMetadata(JSON.parse(event.target.value))
     setRawJson(event.target.value)
+    console.log(event.target.value)
     setLoading(true)
   }
 

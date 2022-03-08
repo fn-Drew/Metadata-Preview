@@ -11,10 +11,11 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
   const hook = () => {
     if (!ipfsInput) return null
     axios.get(ipfsInput).then((response) => {
-
       const jsonOutput = response.data
-      setJsonMetadata(jsonOutput)
-      setRawJson(JSON.stringify(jsonOutput, null, 4))
+      if (typeof jsonOutput === 'object') {
+        setJsonMetadata(jsonOutput)
+        setRawJson(JSON.stringify(jsonOutput, null, 4))
+      }
     })
   }
   useEffect(hook, [ipfsInput])
