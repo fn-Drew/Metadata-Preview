@@ -15,7 +15,7 @@ const AnimationUrl = ({ animationUrl, loading }) => {
         (!loading) ?
           <video
             onLoadStart="video.volume=0.01"
-            className="w-1/2 py-12"
+            className="w-64"
             controls
           >
             <source src={animationUrl} />

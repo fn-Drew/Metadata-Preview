@@ -93,11 +93,7 @@ const App = () => {
 
         <div className="col-span-1">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
-          <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
-          <div className="text-center">
-            {/* <Description description={jsonMetadata.description} /> */}
-            <Attributes attributes={jsonMetadata.attributes} />
-          </div>
+
         </div>
 
       </div>
