@@ -67,7 +67,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
   }
 
   return (
-    <div className="">
+    <div className="shadow-inner shadow-gray-300 bg-[#f8fafb] p-4 m-8 rounded-md">
       <div className="pb-4 pt-12 ml-6 text-center text-4xl"> Properties </div>
       <div className="flex w-full flex-col place-items-center">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
