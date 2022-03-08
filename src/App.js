@@ -73,7 +73,7 @@ const App = () => {
                   element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
                 />
                 <Route
-                  path="/"
+                  exact path="/"
                   element={
                     <div className="flex row-span-5 w-11/12 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem]">
                       <p> Choose an input method </p>
@@ -94,7 +94,7 @@ const App = () => {
         </div>
 
       </div>
-    </div>
+    </div >
   )
 }
 
