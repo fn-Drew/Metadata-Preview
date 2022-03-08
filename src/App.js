@@ -56,8 +56,8 @@ const App = () => {
   return (
     <div className="h-screen w-screen bg-[#fbfdff] font-body">
 
-      <div className="grid m-auto max-w-7xl gap-8 grid-cols-3">
-        <div className="col-span-2">
+      <div className="grid m-auto max-w-7xl gap-8 grid-cols-5">
+        <div className="col-span-3">
           <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
             <Router>
               <NavBar />
@@ -91,7 +91,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="col-span-1">
+        <div className="col-span-2">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
 
         </div>
