@@ -14,7 +14,8 @@ const AnimationUrl = ({ animationUrl, loading }) => {
       {
         (!loading) ?
           <video
-            onLoadStart="video.volume=0.01"
+            id="animation-url"
+            onLoadStart={() => document.getElementById('animation-url').volume = 0.1}
             className="w-64"
             controls
           >
