@@ -21,8 +21,10 @@ const Media = ({ jsonMetadata, loading }) => {
 
   return (
     <div className="flex flex-col place-items-center gap-8 pb-10">
-      <div className="pt-8 text-center text-3xl"> {jsonMetadata.name} </div>
-      <ExternalUrl externalUrl={jsonMetadata.external_url} />
+      <div className="flex gap-2 place-items-center">
+        <div className="pt-8 text-center text-3xl"> {jsonMetadata.name} </div>
+        <ExternalUrl externalUrl={jsonMetadata.external_url} />
+      </div>
       {
         (!loading) ?
           <img alt="" className="w-64 shadow-lg" src={nftPicture} /> :

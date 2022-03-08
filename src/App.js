@@ -3,10 +3,7 @@ import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Media from "./Components/render/Media"
-import Description from "./Components/render/Description"
-import Attributes from "./Components/render/Attributes"
 import Properties from "./Components/render/Properties.js"
-import AnimationUrl from "./Components/render/AnimationUrl.js"
 import NavBar from "./Components/NavBar"
 import RawJsonInput from "./Components/RawJsonInput"
 import IpfsInput from "./Components/IpfsInput"
@@ -59,6 +56,7 @@ const App = () => {
       <div className="grid m-auto max-w-7xl gap-8 grid-cols-5">
         <div className="col-span-3">
           <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
+
             <Router>
               <NavBar />
               <Routes>
@@ -93,7 +91,6 @@ const App = () => {
 
         <div className="col-span-2">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
-
         </div>
 
       </div>
