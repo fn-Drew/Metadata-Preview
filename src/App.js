@@ -1,6 +1,6 @@
 import "./App.css"
 import { useState, useEffect } from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 
 import Media from "./Components/render/Media"
 import Properties from "./Components/render/Properties.js"
@@ -61,19 +61,19 @@ const App = () => {
               <NavBar />
               <Routes>
                 <Route
-                  path="RawJsonInput"
+                  path="/RawJsonInput"
                   element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} />}
                 />
                 <Route
-                  path="IPFSinput"
+                  path="/IPFSinput"
                   element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
                 />
                 <Route
-                  path="FileInput"
+                  path="/FileInput"
                   element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
                 />
                 <Route
-                  path="*"
+                  path="/"
                   element={
                     <div className="flex row-span-5 w-11/12 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem]">
                       <p> Choose an input method </p>
