@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/NFT-Metadata-Preview/static/css/main.6e25eaed.css",
-    "main.js": "/NFT-Metadata-Preview/static/js/main.86a0de36.js",
+    "main.js": "/NFT-Metadata-Preview/static/js/main.218ded1c.js",
     "static/media/IBMPlexSans-Text.ttf": "/NFT-Metadata-Preview/static/media/IBMPlexSans-Text.f9249a46e2b1aa65c065.ttf",
     "static/media/IBMPlexMono-Text.ttf": "/NFT-Metadata-Preview/static/media/IBMPlexMono-Text.e15fe2d7a7ef10f0772c.ttf",
     "index.html": "/NFT-Metadata-Preview/index.html",
     "main.6e25eaed.css.map": "/NFT-Metadata-Preview/static/css/main.6e25eaed.css.map",
-    "main.86a0de36.js.map": "/NFT-Metadata-Preview/static/js/main.86a0de36.js.map"
+    "main.218ded1c.js.map": "/NFT-Metadata-Preview/static/js/main.218ded1c.js.map"
   },
   "entrypoints": [
     "static/css/main.6e25eaed.css",
-    "static/js/main.86a0de36.js"
+    "static/js/main.218ded1c.js"
   ]
 }
