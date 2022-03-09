@@ -6,7 +6,7 @@ const AnimationUrl = ({ animationUrl, loading }) => {
   }
 
   if (animationUrl.substring(0, 7) === "ipfs://") {
-    animationUrl = `https://ipfs.io/ipfs/${animationUrl.slice(7)}`
+    animationUrl = `https://heartnfts.mypinata.cloud/ipfs/${animationUrl.slice(7)}`
   }
 
   return (

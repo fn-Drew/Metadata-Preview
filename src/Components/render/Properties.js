@@ -67,9 +67,9 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
   }
 
   return (
-    <div className="shadow-inner shadow-gray-300 bg-[#f8fafb] p-4 m-8 rounded-md">
-      <div className="pb-4 pt-12 ml-6 text-center text-4xl"> Properties </div>
-      <div className="flex w-full flex-col place-items-center">
+    <div className="flex flex-col pt-12 items-center">
+      <div className="pb-4 ml-6 text-center text-4xl"> Properties </div>
+      <div className="shadow-inner pt-8 overflow-y-auto shadow-gray-300 bg-[#f8fafb] rounded-md flex w-11/12 flex-col place-items-center">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
@@ -77,7 +77,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
                 <textarea
                   className="property-input"
                   rows="1"
-                  placeholder={propertyName}
+                  placeholder={propertyName.replaceAll('_', ' ')}
                   value={propertyInfo.value}
                   onInput={(event) => setPropertyValue(event, propertyName)}
                 />
@@ -89,7 +89,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
                 <textarea
                   className="property-input"
                   rows="1"
-                  placeholder={`${propertyName} is a required property!`}
+                  placeholder={`${propertyName.replaceAll('_', ' ')} is a required property!`}
                   value={propertyInfo.value}
                   onInput={(event) => setPropertyValue(event, propertyName)}
                 />
@@ -99,9 +99,9 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
             return (
               <div className="my-4 w-11/12">
                 <textarea
-                  className="property-input"
+                  className="property-input first-letter:text-red-500"
                   rows="1"
-                  placeholder={`${propertyName} is a recommended property.`}
+                  placeholder={`${propertyName.replaceAll('_', ' ')} is a recommended property.`}
                   value={propertyInfo.value}
                   onInput={(event) => setPropertyValue(event, propertyName)}
                 />
