@@ -1,15 +1,19 @@
-import ClipLoader from "react-spinners/ClipLoader"
 import ExternalUrl from "./ExternalUrl"
 import AnimationUrl from "./AnimationUrl"
 import Attributes from "./Attributes"
+import Spinner from "../Spinner"
 
-const Media = ({ jsonMetadata, loading }) => {
+const Media = ({ jsonMetadata, loading, setLoading }) => {
 
   if (!jsonMetadata.hasOwnProperty("image"))
     return (
       <div className="flex flex-col place-items-center gap-14">
         <div className="pt-8 text-center text-3xl"> Your NFT #00 </div>
-        <img alt="" className="w-64 shadow-lg" src='https://ipfs.io/ipfs/QmNctds8VQKxnZ5K4onxoAnUY1adsoPnbUgsKFDAPw294k' />
+        <img
+          alt=""
+          className="w-64 shadow-lg"
+          src='https://ipfs.io/ipfs/QmNctds8VQKxnZ5K4onxoAnUY1adsoPnbUgsKFDAPw294k'
+        />
       </div>
     )
 
@@ -17,6 +21,7 @@ const Media = ({ jsonMetadata, loading }) => {
 
   if (nftPicture.substring(0, 7) === "ipfs://") {
     nftPicture = `https://heartnfts.mypinata.cloud/ipfs/${nftPicture.slice(7)}`
+    console.log(loading)
   }
 
   return (
@@ -25,12 +30,18 @@ const Media = ({ jsonMetadata, loading }) => {
         <div className="pt-8 text-center text-3xl"> {jsonMetadata.name} </div>
         <ExternalUrl externalUrl={jsonMetadata.external_url} />
       </div>
-      {
-        (!loading) ?
-          <img alt="" className="w-64 shadow-lg" src={nftPicture} /> :
-          <ClipLoader loading={loading} size={50} />
-        // <div className="bg-slate-700 animate-pulse shadow-lg rounded-md aspect-video w-64"> </div>
-      }
+      <div className={loading ? "block" : "hidden"}>
+        {/* <ClipLoader className="p-60" size={100} /> */}
+        <Spinner />
+      </div>
+      <div className={loading ? "hidden" : "block"}>
+        <img
+          alt=""
+          className="w-64 shadow-lg"
+          src={nftPicture}
+          onLoad={() => setLoading(false)}
+        />
+      </div>
       <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
       <div className="text-center">
         {/* <Description description={jsonMetadata.description} /> */}
