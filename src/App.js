@@ -29,7 +29,7 @@ const App = () => {
 
     const $ = async () => {
       if (loading) {
-        await Awaitable(1000)
+        // await Awaitable(1000)
         setLoading(false);
       }
     }

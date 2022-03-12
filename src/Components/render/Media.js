@@ -17,7 +17,6 @@ const Media = ({ jsonMetadata, loading }) => {
 
   if (nftPicture.substring(0, 7) === "ipfs://") {
     nftPicture = `https://heartnfts.mypinata.cloud/ipfs/${nftPicture.slice(7)}`
-    console.log(`PICTURE LOADED`,)
   }
 
   return (

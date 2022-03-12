@@ -1,28 +1,24 @@
-import { useEffect, useState } from "react"
-
-import axios from "axios"
+import { useEffect } from "react"
 
 const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handleStringToJson, setRawJson }) => {
 
   if (Object.prototype.toString.call(ipfsInput) === "[object String]" && ipfsInput.substring(0, 7) === "ipfs://") {
-    setIpfsInput(`https://ipfs.io/ipfs/${ipfsInput.slice(7)}`)
+    setIpfsInput(`https://heartnfts.mypinata.cloud/ipfs/${ipfsInput.slice(7)}`)
   }
 
   const hook = () => {
     if (!ipfsInput) return null
-    axios.get(ipfsInput).then((response) => {
-      const jsonOutput = response.data
-      if (typeof jsonOutput === 'object') {
-        setJsonMetadata(jsonOutput)
-        setRawJson(JSON.stringify(jsonOutput, null, 4))
-      }
-    })
+    fetch(ipfsInput)
+      .then(response => response.json())
+      .then((data) => {
+        setJsonMetadata(data)
+        setRawJson(data)
+      })
   }
   useEffect(hook, [ipfsInput])
 
   const handleIpfsInput = (event) => {
     setIpfsInput(event.target.value)
-    hook()
     setLoading(true)
     handleStringToJson(event)
   }
@@ -33,7 +29,7 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
         className="string-input"
         rows="5"
         value={ipfsInput}
-        onInput={handleIpfsInput}
+        onChange={handleIpfsInput}
         placeholder="Input IPFS link..."
       />
       {/* border-[1px] focus:border-sky-500 transition-colors focus:shadow-inner focus:outline-none mt-8 border-solid ml-6 rounded-b-lg border-[#69cdee] bg-[#edf9fe] p-[.95rem] */}
