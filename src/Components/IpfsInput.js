@@ -12,7 +12,7 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
       .then(response => response.json())
       .then((data) => {
         setJsonMetadata(data)
-        setRawJson(data)
+        setRawJson(JSON.stringify(data, null, 4))
       })
   }
   useEffect(hook, [ipfsInput])
