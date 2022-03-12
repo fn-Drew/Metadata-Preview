@@ -1,7 +1,7 @@
 import ExternalUrl from "./ExternalUrl"
 import AnimationUrl from "./AnimationUrl"
 import Attributes from "./Attributes"
-import Spinner from "../Spinner"
+import { SpinnerLarge } from "../Spinners"
 
 const Media = ({ jsonMetadata, loading, setLoading }) => {
 
@@ -21,7 +21,6 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
 
   if (nftPicture.substring(0, 7) === "ipfs://") {
     nftPicture = `https://heartnfts.mypinata.cloud/ipfs/${nftPicture.slice(7)}`
-    console.log(loading)
   }
 
   return (
@@ -31,8 +30,7 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
         <ExternalUrl externalUrl={jsonMetadata.external_url} />
       </div>
       <div className={loading ? "block" : "hidden"}>
-        {/* <ClipLoader className="p-60" size={100} /> */}
-        <Spinner />
+        <SpinnerLarge />
       </div>
       <div className={loading ? "hidden" : "block"}>
         <img
@@ -42,10 +40,10 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
           onLoad={() => setLoading(false)}
         />
       </div>
-      <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} />
+      <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} setLoading={setLoading} />
       <div className="text-center">
         {/* <Description description={jsonMetadata.description} /> */}
-        <Attributes attributes={jsonMetadata.attributes} />
+        <Attributes attributes={jsonMetadata.attributes} loading={loading} setLoding={setLoading} />
       </div>
     </div>
   )
