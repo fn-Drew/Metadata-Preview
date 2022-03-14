@@ -44,10 +44,14 @@ const App = () => {
     handleStringToJson(event)
   }
 
-  const handleStringToJson = (event) => {
-    setJsonMetadata(JSON.parse(event.target.value))
-    setRawJson(event.target.value)
+  useEffect(() => {
+    console.log('image changed')
     setLoading(true)
+  }, [jsonMetadata.image])
+
+  const handleStringToJson = (event) => {
+    setRawJson(event.target.value)
+    setJsonMetadata(JSON.parse(event.target.value))
   }
 
   return (
@@ -85,7 +89,7 @@ const App = () => {
           </div>
 
           <div>
-            <Properties setRawJson={setRawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
+            <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
           </div>
         </div>
 

@@ -5,6 +5,7 @@ import { SpinnerLarge } from "../Spinners"
 
 const Media = ({ jsonMetadata, loading, setLoading }) => {
 
+  // if there is no image, display this placeholder instead
   if (!jsonMetadata.hasOwnProperty("image"))
     return (
       <div className="flex flex-col place-items-center gap-14">

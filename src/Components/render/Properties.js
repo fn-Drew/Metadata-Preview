@@ -59,11 +59,9 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
   }
 
   const setPropertyValue = (event, propertyName) => {
-    setJsonMetadata(prevState => ({
-      ...prevState,
-      [propertyName]: event.target.value
-    }))
-    setRawJson(JSON.stringify(jsonMetadata, null, 4))
+    const newMetadata = { ...jsonMetadata, [propertyName]: event.target.value }
+    setJsonMetadata(newMetadata)
+    setRawJson(JSON.stringify(newMetadata, null, 4))
   }
 
   return (

@@ -16,7 +16,7 @@ const Attributes = ({ attributes, loading, setLoading }) => {
             </div>
           </div>
 
-          <div onLoad={() => setLoading(false)} className={loading ? "hidden" : "block"}>
+          <div className={loading ? "hidden" : "block"}>
             <div className="text-sm  font-bold text-[#15b2e5]">
               {attribute.trait_type.toUpperCase()}
             </div>
@@ -24,7 +24,8 @@ const Attributes = ({ attributes, loading, setLoading }) => {
           </div>
 
         </div>
-      ))}
+      ))
+      }
     </div >
   )
 }
