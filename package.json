@@ -5,10 +5,12 @@
   "private": true,
   "dependencies": {
     "@carbon/icons-react": "^10.45.0",
+    "@monaco-editor/react": "^4.4.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "gh-pages": "^3.2.3",
+    "prismjs": "^1.27.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^12.0.2",

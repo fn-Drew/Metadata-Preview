@@ -13,7 +13,7 @@ import Awaitable from "./Components/Awaitable"
 const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState(false)
 
-  const [rawJson, setRawJson] = useState([])
+  const [rawJson, setRawJson] = useState(null)
   const [ipfsInput, setIpfsInput] = useState([])
 
   const [loading, setLoading] = useState(false)
@@ -45,13 +45,12 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log('image changed')
     setLoading(true)
   }, [jsonMetadata.image])
 
   const handleStringToJson = (event) => {
-    setRawJson(event.target.value)
-    setJsonMetadata(JSON.parse(event.target.value))
+    setRawJson(event)
+    setJsonMetadata(JSON.parse(event))
   }
 
   return (
@@ -66,7 +65,7 @@ const App = () => {
               <Routes>
                 <Route
                   path="/RawJsonInput"
-                  element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} />}
+                  element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} setJsonMetadata={setJsonMetadata} />}
                 />
                 <Route
                   path="/IPFSinput"
