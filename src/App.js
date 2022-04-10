@@ -54,7 +54,7 @@ const App = () => {
   }
 
   return (
-    <div className="h-screen w-screen bg-[#fbfdff] font-body">
+    <div className="h-screen w-screen bg-background-white font-body">
 
       <div className="grid m-auto max-w-7xl gap-8 grid-cols-5">
         <div className="col-span-3">
@@ -78,7 +78,7 @@ const App = () => {
                 <Route
                   exact path="/"
                   element={
-                    <div className="flex row-span-5 w-11/12 text-[#69cdee] flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-[#69cdee] bg-[#edf9fe] py-12 px-[1.58rem]">
+                    <div className="flex row-span-5 w-11/12 text-accent-blue flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue py-12 px-[1.58rem]">
                       <p> Choose an input method </p>
                     </div>
                   }

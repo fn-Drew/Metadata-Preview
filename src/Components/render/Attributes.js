@@ -6,9 +6,9 @@ const Attributes = ({ attributes, loading, setLoading }) => {
   }
 
   return (
-    <div className="grid gap-8 grid-cols-2 p-4 shadow-inner shadow-gray-300 bg-[#f8fafb]">
+    <div className="grid gap-8 grid-cols-2 p-4 shadow-inner shadow-gray-300 bg-background-white">
       {attributes.map((attribute) => (
-        <div className="truncate last:odd:col-span-2 px-6 rounded-md border-[1px] border-solid border-[#69cdee] bg-[#edf9fe] py-4 shadow-md">
+        <div className="truncate last:odd:col-span-2 px-6 rounded-md border-[1px] border-solid border-accent-blue bg-background-blue py-4 shadow-md">
 
           <div className={loading ? "block" : "hidden"}>
             <div className="px-14">

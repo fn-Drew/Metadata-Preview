@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
-    <div className="w-11/12 bg-[#edf9fe] border-[#69cdee] rounded-lg rounded-b-none border-[1px] border-b-0 ">
-      <ul className="flex justify-around divide-x divide-solid text-center overflow-auto divide-[#69cdee]">
+    <div className="w-11/12 bg-background-blue border-accent-blue rounded-lg rounded-b-none border-[1px] border-b-0 ">
+      <ul className="flex justify-around divide-x divide-solid text-center overflow-auto divide-accent-blue">
         <li className="hover:shadow-inner truncate w-2/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
