@@ -1,4 +1,5 @@
 import Editor from "@monaco-editor/react"
+import { SpinnerSmall } from "./Spinners"
 import loader from "@monaco-editor/loader";
 
 const RawJsonInput = ({ rawJson, setRawJson, setJsonMetadata }) => {
@@ -31,6 +32,7 @@ const RawJsonInput = ({ rawJson, setRawJson, setJsonMetadata }) => {
           setJsonMetadata(JSON.parse(event))
         }}
         value={rawJson}
+        loading={<SpinnerSmall />}
       />
     </div >
   )
