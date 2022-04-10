@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone"
 import { Upload32 } from "@carbon/icons-react"
 import ClipLoader from "react-spinners/ClipLoader"
 
-function FileInput({ setJsonMetadata, setLoading, loading, setRawJson }) {
+function FileInput({ setJsonMetadata, loading, setLoading, setRawJson }) {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
@@ -55,19 +55,5 @@ function FileInput({ setJsonMetadata, setLoading, loading, setRawJson }) {
     </div>
   )
 }
-
-// {
-//   isDragActive ?
-//     <div className="h-full w-2/3 py-10 my-12 flex rounded-md justify-center shadow-sky-200 bg-background-blue shadow-xl border-dotted text-[#5fbbda] border-accent-blue border-2 outline-4 ring-8 ring-offset-8 ring-background-blue ring-offset-white ">
-//       <Upload32 className="h-[30%] w-[30%]" />
-//     </div>
-//     :
-//     <div className="flex flex-col gap-4 place-items-center h-full w-2/3 py-10 my-12 rounded-md shadow-sky-200 shadow-lg bg-white text-[#5fbbda] outline-4 ring-8 ring-offset-8 ring-background-blue ring-offset-white ">
-//       <Upload32 className="h-[20%] w-[20%]" />
-//       <p className="text-2xl">
-//         Drag & Drop JSON
-//       </p>
-//     </div>
-// }
 
 export default FileInput

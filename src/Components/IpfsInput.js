@@ -32,7 +32,6 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
         onInput={handleIpfsInput}
         placeholder="Input IPFS link..."
       />
-      {/* border-[1px] focus:border-sky-500 transition-colors focus:shadow-inner focus:outline-none mt-8 border-solid ml-6 rounded-b-lg border-accent-blue bg-background-blue p-[.95rem] */}
     </div >
   )
 }

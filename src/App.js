@@ -8,7 +8,6 @@ import NavBar from "./Components/NavBar"
 import RawJsonInput from "./Components/RawJsonInput"
 import IpfsInput from "./Components/IpfsInput"
 import FileInput from "./Components/FileInput"
-import Awaitable from "./Components/Awaitable"
 
 const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState(false)
@@ -55,21 +54,19 @@ const App = () => {
 
   return (
     <div className="h-screen w-screen bg-background-white font-body">
-
       <div className="grid m-auto max-w-7xl gap-8 grid-cols-5">
         <div className="col-span-3">
           <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
-
             <Router>
               <NavBar />
               <Routes>
                 <Route
                   path="/RawJsonInput"
-                  element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} handleStringToJson={handleRawJsonInput} setJsonMetadata={setJsonMetadata} />}
+                  element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} setJsonMetadata={setJsonMetadata} />}
                 />
                 <Route
                   path="/IPFSinput"
-                  element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setRawJson={setRawJson} handleStringToJson={handleStringToJson} setJsonMetadata={setJsonMetadata} setJsonMetadata={setJsonMetadata} setLoading={setLoading} />}
+                  element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setJsonMetadata={setJsonMetadata} setLoading={setLoading} handleStringToJson={handleStringToJson} setRawJson={setRawJson} />}
                 />
                 <Route
                   path="/FileInput"
@@ -86,16 +83,13 @@ const App = () => {
               </Routes>
             </Router>
           </div>
-
           <div>
             <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
           </div>
         </div>
-
         <div className="col-span-2">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         </div>
-
       </div>
     </div >
   )

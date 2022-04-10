@@ -1,6 +1,6 @@
 import { SpinnerSmall } from "../Spinners"
 
-const Attributes = ({ attributes, loading, setLoading }) => {
+const Attributes = ({ attributes, loading }) => {
   if (!attributes) {
     return null
   }
