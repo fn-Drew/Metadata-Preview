@@ -6,11 +6,11 @@ const AnimationUrl = ({ animationUrl, loading, setLoading }) => {
   }
 
   if (animationUrl.substring(0, 7) === "ipfs://") {
-    animationUrl = `https://heartnfts.mypinata.cloud/ipfs/${animationUrl.slice(7)}`
+    animationUrl = `https://cloudflare-ipfs.com/ipfs/${animationUrl.slice(7)}`
   }
 
   return (
-    <div className="flex place-items-center flex-col">
+    <div className="flex flex-col place-items-center">
       <div className={loading ? "block" : "hidden"}>
         <SpinnerMedium />
       </div>

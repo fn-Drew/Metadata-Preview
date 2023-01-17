@@ -17,12 +17,6 @@ const App = () => {
 
   const [loading, setLoading] = useState(false)
 
-  // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  //   document.documentElement.classList.add('dark')
-  // } else {
-  //   document.documentElement.classList.remove('dark')
-  // }
-
   useEffect(() => {
     console.debug("[Debug] (Page-Loading-Wrapper)", "Initializing Page + Data.");
 
@@ -38,23 +32,18 @@ const App = () => {
     });
   }, [loading]);
 
-  const handleRawJsonInput = (event) => {
-    setRawJson(event.target.value)
-    handleStringToJson(event)
-  }
-
   useEffect(() => {
     setLoading(true)
   }, [jsonMetadata.image])
 
   const handleStringToJson = (event) => {
     setRawJson(event)
-    setJsonMetadata(JSON.parse(event))
+    setJsonMetadata(event)
   }
 
   return (
-    <div className="h-screen w-screen bg-background-white font-body">
-      <div className="grid m-auto max-w-7xl gap-8 grid-cols-5">
+    <div className="w-screen h-screen bg-background-white font-body">
+      <div className="grid grid-cols-5 gap-8 m-auto max-w-7xl">
         <div className="col-span-3">
           <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
             <Router>

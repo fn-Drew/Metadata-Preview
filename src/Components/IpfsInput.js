@@ -3,7 +3,7 @@ import { useEffect } from "react"
 const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handleStringToJson, setRawJson }) => {
 
   if (Object.prototype.toString.call(ipfsInput) === "[object String]" && ipfsInput.substring(0, 7) === "ipfs://") {
-    setIpfsInput(`https://heartnfts.mypinata.cloud/ipfs/${ipfsInput.slice(7)}`)
+    setIpfsInput(`https://cloudflare-ipfs.com/ipfs/${ipfsInput.slice(7)}`)
   }
 
   const hook = () => {
@@ -15,7 +15,7 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
         setRawJson(JSON.stringify(data, null, 4))
       })
   }
-  useEffect(hook, [ipfsInput])
+  useEffect(hook, [ipfsInput, setRawJson, setJsonMetadata])
 
   const handleIpfsInput = (event) => {
     setIpfsInput(event.target.value)
@@ -24,7 +24,7 @@ const IpfsInput = ({ ipfsInput, setIpfsInput, setJsonMetadata, setLoading, handl
   }
 
   return (
-    <div className="row-span-5 w-11/12">
+    <div className="w-11/12 row-span-5">
       <textarea
         className="string-input"
         rows="5"
