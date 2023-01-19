@@ -1,7 +1,7 @@
 {
   "name": "metadata-viewer",
   "version": "0.1.0",
-  "homepage": "https://MrMisterBean.github.io/NFT-Metadata-Preview",
+  "homepage": "https://fn-drew.github.io/Metadata-Preview/",
   "private": true,
   "dependencies": {
     "@carbon/icons-react": "^10.45.0",
