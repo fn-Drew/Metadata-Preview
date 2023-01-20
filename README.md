@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Website to preview and verify the qualify of Web3 tokens based on the ERC721 guidelines
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Use this data to test the site:
 
-## Available Scripts
+ipfs link: ```ipfs://QmU5dMCHxT3rvUDhdwVsg6A7FQ4oez59SsB2GcMhDMswwX/304```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+JSON: 
+```json
+{
+  "name": "GEMMA #304",
+  "description": "GEMMA (The Generative Electronic Museum of Metaverse Art) is a comprehensive generative art collection by Tristan Eaton. Combining Eaton’s stunning portraiture and layered collage, each piece carries its own unique personality and identity.",
+  "external_url": "https://gemma.art",
+  "image": "ipfs://QmUjGTEirKvrLhdjthpHxMD91WkzJ8vjsZCSCo89RmqyCC/46934397167f0c1bc0b82383b2e9c3424e50c5d4feb908a2632fc92f32a32a35.jpg",
+  "attributes": [
+    {
+      "value": "OG GEMMA",
+      "trait_type": "Portrait"
+    },
+    {
+      "value": "CMYK",
+      "trait_type": "Facial Tears"
+    },
+    {
+      "value": "Green Halftone",
+      "trait_type": "Facial Tears"
+    },
+    {
+      "value": "Blue Line",
+      "trait_type": "Facial Tears"
+    },
+    {
+      "value": "X-Ray",
+      "trait_type": "Facial Tears"
+    },
+    {
+      "value": "Red Line Skull",
+      "trait_type": "Facial Tears"
+    },
+    {
+      "value": "Tokyo Robe 9",
+      "trait_type": "Patterns"
+    },
+    {
+      "value": "Navajo 1",
+      "trait_type": "Patterns"
+    },
+    {
+      "value": "Guilloche",
+      "trait_type": "Patterns"
+    },
+    {
+      "value": "ZigZag 3",
+      "trait_type": "Patterns"
+    },
+    {
+      "value": "Red Lady",
+      "trait_type": "Illustrations"
+    },
+    {
+      "value": "Butterfly",
+      "trait_type": "Illustrations"
+    },
+    {
+      "value": "Poster Woman",
+      "trait_type": "Illustrations"
+    },
+    {
+      "value": "Russian",
+      "trait_type": "Typography"
+    },
+    {
+      "value": "Revolt",
+      "trait_type": "Typography"
+    },
+    {
+      "value": "Criminal",
+      "trait_type": "Typography"
+    },
+    {
+      "value": "Blue Hex Lines",
+      "trait_type": "Linework"
+    },
+    {
+      "value": "Warrior",
+      "trait_type": "Linework"
+    },
+    {
+      "value": "Asanoha",
+      "trait_type": "Doodads"
+    },
+    {
+      "value": "Mouse Pointer",
+      "trait_type": "Doodads"
+    },
+    {
+      "value": "Russian Skull Shock",
+      "trait_type": "Doodads"
+    },
+    {
+      "value": "Baby Blue",
+      "trait_type": "Background"
+    }
+  ]
+}
+```

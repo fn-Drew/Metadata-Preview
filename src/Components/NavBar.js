@@ -12,7 +12,7 @@ const NavBar = () => {
             className="navbar-link"
             to="/RawJsonInput"
           >
-            <span className="group-hover:inline hidden">Raw JSON</span>
+            <span className="group-hover:inline hidden">JSON</span>
             <span className="group-hover:hidden flex justify-center"><Code24 /></span>
           </Link>
         </li>
