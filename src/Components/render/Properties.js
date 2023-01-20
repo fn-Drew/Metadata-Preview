@@ -64,14 +64,16 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
     setRawJson(JSON.stringify(newMetadata, null, 4))
   }
 
+
   return (
     <div className="flex flex-col pt-12 items-center">
-      <div className="pb-4 ml-6 text-center text-4xl"> Properties </div>
-      <div className="shadow-inner pt-8 overflow-y-auto shadow-gray-300 bg-background-white rounded-md flex w-11/12 flex-col place-items-center">
+      <div className="pb-8 ml-6 text-center text-4xl"> Properties </div>
+      <div className="shadow-inner pt-8  shadow-gray-300 bg-background-white rounded-md flex w-11/12 flex-col place-items-center">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
               <div className="my-4 w-11/12">
+                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input"
                   rows="1"
@@ -84,6 +86,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           } else if (propertyInfo.necessity === "required") {
             return (
               <div className="my-4 w-11/12">
+                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', '')}</span>
                 <textarea
                   className="property-input"
                   rows="1"
@@ -96,6 +99,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           } else if (propertyInfo.necessity === "recommended") {
             return (
               <div className="my-4 w-11/12">
+                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', '')}</span>
                 <textarea
                   className="property-input first-letter:text-red-500"
                   rows="1"
@@ -108,7 +112,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           }
         })}
       </div>
-    </div>
+    </div >
   )
 }
 

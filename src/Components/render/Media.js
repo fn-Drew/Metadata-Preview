@@ -10,7 +10,7 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
   if (!jsonMetadata.hasOwnProperty("image"))
     return (
       <div className="flex flex-col place-items-center gap-14">
-        <div className="pt-8 text-3xl text-center"> Your NFT #00 </div>
+        <div className="pt-8 text-3xl text-center"> Your Token #00 </div>
         <img
           alt=""
           className="w-64 shadow-lg"

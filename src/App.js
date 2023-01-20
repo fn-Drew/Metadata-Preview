@@ -42,7 +42,7 @@ const App = () => {
   }
 
   return (
-    <div className="w-screen h-screen bg-background-white font-body">
+    <div className="w-full h-full bg-background-white font-body">
       <div className="grid grid-cols-5 gap-8 m-auto max-w-7xl">
         <div className="col-span-3">
           <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
