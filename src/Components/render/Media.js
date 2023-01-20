@@ -2,6 +2,7 @@ import ExternalUrl from "./ExternalUrl"
 import AnimationUrl from "./AnimationUrl"
 import Attributes from "./Attributes"
 import { SpinnerLarge } from "../Spinners"
+import Heart256 from "../../images/heart_256.avif"
 
 const Media = ({ jsonMetadata, loading, setLoading }) => {
 
@@ -13,7 +14,7 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
         <img
           alt=""
           className="w-64 shadow-lg"
-          src='https://cloudflare-ipfs.com/ipfs/QmNctds8VQKxnZ5K4onxoAnUY1adsoPnbUgsKFDAPw294k'
+          src={Heart256}
         />
       </div>
     )
