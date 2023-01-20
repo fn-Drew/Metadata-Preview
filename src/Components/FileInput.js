@@ -25,7 +25,7 @@ function FileInput({ setJsonMetadata, loading, setLoading, setRawJson }) {
       }
       reader.readAsText(file)
     })
-  }, [])
+  }, [setJsonMetadata, setLoading, setRawJson])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (

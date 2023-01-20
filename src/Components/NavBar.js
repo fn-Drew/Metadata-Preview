@@ -1,31 +1,37 @@
 import { Link } from "react-router-dom"
+import { Code24 } from "@carbon/icons-react"
+import { Link24 } from "@carbon/icons-react"
+import { Upload24 } from "@carbon/icons-react"
 
 const NavBar = () => {
   return (
-    <div className="w-11/12 bg-background-blue border-accent-blue rounded-lg rounded-b-none border-[1px] border-b-0 ">
-      <ul className="flex justify-around divide-x divide-solid text-center overflow-auto divide-accent-blue">
-        <li className="hover:shadow-inner truncate w-2/3 active:shadow-slate-300">
+    <div className="w-11/12 bg-background-blue border-accent-blue text-lg rounded-lg rounded-b-none border-[1px] border-b-0 ">
+      <ul className="flex divide-x divide-solid text-center overflow-auto divide-accent-blue">
+        <li className="hover:shadow-inner group p-2 truncate basis-1/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
             to="/RawJsonInput"
           >
-            Raw JSON
+            <span className="group-hover:inline hidden">Raw JSON</span>
+            <span className="group-hover:hidden flex justify-center"><Code24 /></span>
           </Link>
         </li>
-        <li className="hover:shadow-inner w-1/3 active:shadow-slate-300">
+        <li className="hover:shadow-inner py-2 group basis-1/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
             to="/IPFSinput"
           >
-            Ipfs
+            <span className="group-hover:inline hidden">IPFS</span>
+            <span className="group-hover:hidden flex justify-center"><Link24 /></span>
           </Link>
         </li>
-        <li className="hover:shadow-inner w-1/3 active:shadow-slate-300">
+        <li className="hover:shadow-inner py-2 group basis-1/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
             to="/FileInput"
           >
-            File
+            <span className="group-hover:inline hidden">File Input</span>
+            <span className="group-hover:hidden flex justify-center"><Upload24 /></span>
           </Link>
         </li>
       </ul>
