@@ -73,7 +73,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
               <div className="my-4 w-11/12">
-                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
+                <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input"
                   rows="1"
@@ -86,7 +86,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           } else if (propertyInfo.necessity === "required") {
             return (
               <div className="my-4 w-11/12">
-                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', '')}</span>
+                <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input"
                   rows="1"
@@ -99,7 +99,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
           } else if (propertyInfo.necessity === "recommended") {
             return (
               <div className="my-4 w-11/12">
-                <span className={`property-label ${jsonMetadata.hasOwnProperty("image") ? "" : "hidden"}`}>{propertyName.replaceAll('_', '')}</span>
+                <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input first-letter:text-red-500"
                   rows="1"
