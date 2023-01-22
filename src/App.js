@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar"
 import RawJsonInput from "./Components/RawJsonInput"
 import IpfsInput from "./Components/IpfsInput"
 import FileInput from "./Components/FileInput"
+import Attributes from "./Components/render/Attributes"
 
 const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState(false)
@@ -41,43 +42,53 @@ const App = () => {
   }
 
   return (
-    <div className="w-full h-full bg-background-white font-body">
-      <div className="flex gap-8 m-auto max-w-7xl">
-        <div className="flex flex-col basis-3/5 p-16">
-          <div className="justify-items-center">
-            <Router>
-              <NavBar />
-              <Routes>
-                <Route
-                  path="/RawJsonInput"
-                  element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} setJsonMetadata={setJsonMetadata} />}
-                />
-                <Route
-                  path="/IPFSinput"
-                  element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setJsonMetadata={setJsonMetadata} setLoading={setLoading} handleStringToJson={handleStringToJson} setRawJson={setRawJson} />}
-                />
-                <Route
-                  path="/FileInput"
-                  element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
-                />
-                <Route
-                  exact path="/"
-                  element={
-                    <div className=" text-accent-blue text-center border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue p-12">
-                      <p> Choose an input method </p>
-                    </div>
-                  }
-                />
-              </Routes>
-            </Router>
-          </div>
-          <div className="pt-[115px]">
-            <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
-          </div>
+    <div className="bg-background-white font-body">
+
+      {/* m-auto max-w-7xl */}
+      <div className="grid grid-cols-2 divide-solid max-w-7xl gap-32 m-auto">
+
+        <div className="pt-14">
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route
+                path="/RawJsonInput"
+                element={<RawJsonInput rawJson={rawJson} setRawJson={setRawJson} setJsonMetadata={setJsonMetadata} />}
+              />
+              <Route
+                path="/IPFSinput"
+                element={<IpfsInput ipfsInput={ipfsInput} setIpfsInput={setIpfsInput} setJsonMetadata={setJsonMetadata} setLoading={setLoading} handleStringToJson={handleStringToJson} setRawJson={setRawJson} />}
+              />
+              <Route
+                path="/FileInput"
+                element={<FileInput setJsonMetadata={setJsonMetadata} loading={loading} setLoading={setLoading} setRawJson={setRawJson} />}
+              />
+              <Route
+                exact path="/"
+                element={
+                  <div className=" text-accent-blue text-center border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue p-12">
+                    <p> Choose an input method </p>
+                  </div>
+                }
+              />
+            </Routes>
+          </Router>
         </div>
-        <div className="basis-2/5">
+
+
+        <div className="">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         </div>
+
+        <div className="">
+          <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
+        </div>
+
+        <div className="text-center">
+          <div className="text-4xl pb-8"> Attributes </div>
+          <Attributes attributes={jsonMetadata.attributes} loading={loading} setLoding={setLoading} />
+        </div>
+
       </div>
     </div >
   )

@@ -26,29 +26,28 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
   }
 
   return (
-    <div className="flex p-8 flex-col gap-14 place-items-center">
-      <div className="flex flex-col gap-14">
-        <div className="flex place-items-center">
-          <div className="pt-8 text-4xl text-center"> {jsonMetadata.name} </div>
+    <div className="flex flex-col pt-12 items-center">
+      <div className="flex gap-6 pb-12 items-center">
+        <div className="text-4xl">
+          {jsonMetadata.name}
+        </div>
+        <div>
           <ExternalUrl externalUrl={jsonMetadata.external_url} />
         </div>
-        <div className={loading ? "block" : "hidden"}>
-          <SpinnerLarge />
-        </div>
-        <div className={loading ? "hidden" : "block"}>
-          <img
-            alt=""
-            className="w-64 shadow-lg"
-            src={nftPicture}
-            onLoad={() => setLoading(false)}
-          />
-        </div>
+      </div>
+      <div className={loading ? "block" : "hidden"}>
+        <SpinnerLarge />
+      </div>
+      <div className={loading ? "hidden" : "block"}>
+        <img
+          alt=""
+          className="w-64 shadow-lg"
+          src={nftPicture}
+          onLoad={() => setLoading(false)}
+        />
       </div>
       <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} setLoading={setLoading} />
-      <div className="text-center">
-        <div className="text-4xl pb-8"> Attributes </div>
-        <Attributes attributes={jsonMetadata.attributes} loading={loading} setLoding={setLoading} />
-      </div>
+
     </div>
   )
 }
