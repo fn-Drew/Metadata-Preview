@@ -43,8 +43,8 @@ const App = () => {
   return (
     <div className="w-full h-full bg-background-white font-body">
       <div className="flex gap-8 m-auto max-w-7xl">
-        <div className="basis-3/5 p-16">
-          <div className="mt-8 justify-items-center ">
+        <div className="flex flex-col basis-3/5 p-16">
+          <div className="justify-items-center">
             <Router>
               <NavBar />
               <Routes>
@@ -63,7 +63,7 @@ const App = () => {
                 <Route
                   exact path="/"
                   element={
-                    <div className="flex row-span-5 text-accent-blue flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue py-12 px-[1.58rem]">
+                    <div className=" text-accent-blue text-center border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue p-12">
                       <p> Choose an input method </p>
                     </div>
                   }
@@ -71,7 +71,7 @@ const App = () => {
               </Routes>
             </Router>
           </div>
-          <div>
+          <div className="pt-[115px]">
             <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
           </div>
         </div>

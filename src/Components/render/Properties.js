@@ -66,9 +66,9 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
 
 
   return (
-    <div className="flex flex-col pt-12 items-center">
+    <div className="flex flex-col items-center">
       <div className="text-4xl pb-8"> Properties </div>
-      <div className="shadow-inner pt-8  shadow-gray-300 bg-background-white rounded-md flex w-full flex-col place-items-center">
+      <div className="shadow-inner pt-8  shadow-gray-300 bg-background-white rounded-lg flex w-full flex-col">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (

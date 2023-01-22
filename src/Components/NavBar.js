@@ -16,7 +16,7 @@ const NavBar = () => {
             <span className="group-hover:hidden flex justify-center"><Code24 /></span>
           </Link>
         </li>
-        <li className="hover:shadow-inner py-2 group basis-1/3 active:shadow-slate-300">
+        <li className="hover:shadow-inner p-2 group basis-1/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
             to="/IPFSinput"
@@ -25,7 +25,7 @@ const NavBar = () => {
             <span className="group-hover:hidden flex justify-center"><Link24 /></span>
           </Link>
         </li>
-        <li className="hover:shadow-inner py-2 group basis-1/3 active:shadow-slate-300">
+        <li className="hover:shadow-inner p-2 group basis-1/3 active:shadow-slate-300">
           <Link
             className="navbar-link"
             to="/FileInput"
