@@ -29,7 +29,7 @@ function FileInput({ setJsonMetadata, loading, setLoading, setRawJson }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (
-    <div className="flex row-span-5 w-11/12 content-center text-center justify-center" {...getRootProps()}>
+    <div className="flex row-span-5  content-center text-center justify-center" {...getRootProps()}>
       <input {...getInputProps()} />
       {
         isDragActive ?

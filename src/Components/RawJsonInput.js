@@ -4,7 +4,7 @@ import { SpinnerSmall } from "./Spinners"
 const RawJsonInput = ({ rawJson, setRawJson, setJsonMetadata }) => {
 
   return (
-    <div className="row-span-9 h-[20vh] w-11/12">
+    <div className="row-span-9 h-[20vh] ">
       <Editor
         className="font-mono string-input"
         placeholder="Input Metadata..."

@@ -11,10 +11,8 @@ import FileInput from "./Components/FileInput"
 
 const App = () => {
   const [jsonMetadata, setJsonMetadata] = useState(false)
-
   const [rawJson, setRawJson] = useState(null)
   const [ipfsInput, setIpfsInput] = useState([])
-
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -32,6 +30,7 @@ const App = () => {
     });
   }, [loading]);
 
+  // start spinners when image changes
   useEffect(() => {
     setLoading(true)
   }, [jsonMetadata.image])
@@ -43,9 +42,9 @@ const App = () => {
 
   return (
     <div className="w-full h-full bg-background-white font-body">
-      <div className="grid grid-cols-5 gap-8 m-auto max-w-7xl">
-        <div className="col-span-3">
-          <div className="grid grid-flow-row pt-8 grid-rows-10 justify-items-center ">
+      <div className="flex gap-8 m-auto max-w-7xl">
+        <div className="basis-3/5 p-16">
+          <div className="mt-8 justify-items-center ">
             <Router>
               <NavBar />
               <Routes>
@@ -64,7 +63,7 @@ const App = () => {
                 <Route
                   exact path="/"
                   element={
-                    <div className="flex row-span-5 w-11/12 text-accent-blue flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue py-12 px-[1.58rem]">
+                    <div className="flex row-span-5 text-accent-blue flex-col gap-4 place-items-center resize-y border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue py-12 px-[1.58rem]">
                       <p> Choose an input method </p>
                     </div>
                   }
@@ -76,7 +75,7 @@ const App = () => {
             <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="basis-2/5">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         </div>
       </div>

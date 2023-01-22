@@ -5,7 +5,7 @@ import { Upload24 } from "@carbon/icons-react"
 
 const NavBar = () => {
   return (
-    <div className="w-11/12 bg-background-blue border-accent-blue text-lg rounded-lg rounded-b-none border-[1px] border-b-0 ">
+    <div className="bg-background-blue border-accent-blue text-lg rounded-lg rounded-b-none border-[1px] border-b-0 ">
       <ul className="flex divide-x divide-solid text-center overflow-auto divide-accent-blue">
         <li className="hover:shadow-inner group p-2 truncate basis-1/3 active:shadow-slate-300">
           <Link

@@ -67,12 +67,12 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
 
   return (
     <div className="flex flex-col pt-12 items-center">
-      <div className="pb-8 ml-6 text-center text-4xl"> Properties </div>
-      <div className="shadow-inner pt-8  shadow-gray-300 bg-background-white rounded-md flex w-11/12 flex-col place-items-center">
+      <div className="text-4xl pb-8"> Properties </div>
+      <div className="shadow-inner pt-8  shadow-gray-300 bg-background-white rounded-md flex w-full flex-col place-items-center">
         {Object.entries(properties).map(([propertyName, propertyInfo]) => {
           if (propertyInfo.value || propertyInfo.necessity === "none") {
             return (
-              <div className="my-4 w-11/12">
+              <div className="p-4 w-full">
                 <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input"
@@ -85,7 +85,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
             )
           } else if (propertyInfo.necessity === "required") {
             return (
-              <div className="my-4 w-11/12">
+              <div className="p-4 w-full">
                 <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input"
@@ -98,7 +98,7 @@ const Properties = ({ setRawJson, jsonMetadata, setJsonMetadata }) => {
             )
           } else if (propertyInfo.necessity === "recommended") {
             return (
-              <div className="my-4 w-11/12">
+              <div className="p-4 w-full">
                 <span className={`property-label ${propertyInfo.value ? "" : "hidden"}`}>{propertyName.replaceAll('_', ' ')}</span>
                 <textarea
                   className="property-input first-letter:text-red-500"
