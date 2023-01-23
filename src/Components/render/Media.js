@@ -1,6 +1,5 @@
 import ExternalUrl from "./ExternalUrl"
 import AnimationUrl from "./AnimationUrl"
-import Attributes from "./Attributes"
 import { SpinnerLarge } from "../Spinners"
 import Heart256 from "../../images/heart_256.avif"
 
@@ -47,7 +46,6 @@ const Media = ({ jsonMetadata, loading, setLoading }) => {
         />
       </div>
       <AnimationUrl animationUrl={jsonMetadata.animation_url} loading={loading} setLoading={setLoading} />
-
     </div>
   )
 }

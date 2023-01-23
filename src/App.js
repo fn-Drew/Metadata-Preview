@@ -43,10 +43,7 @@ const App = () => {
 
   return (
     <div className="bg-background-white font-body">
-
-      {/* m-auto max-w-7xl */}
       <div className="grid grid-cols-2 divide-solid max-w-7xl gap-32 m-auto">
-
         <div className="pt-14">
           <Router>
             <NavBar />
@@ -66,7 +63,7 @@ const App = () => {
               <Route
                 exact path="/"
                 element={
-                  <div className=" text-accent-blue text-center border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue p-12">
+                  <div className=" flex justify-center items-center text-accent-blue text-center h-5/6 border-[1px] border-solid rounded-b-lg border-accent-blue bg-background-blue text-2xl">
                     <p> Choose an input method </p>
                   </div>
                 }
@@ -74,21 +71,16 @@ const App = () => {
             </Routes>
           </Router>
         </div>
-
-
         <div className="">
           <Media jsonMetadata={jsonMetadata} loading={loading} setLoading={setLoading} />
         </div>
-
         <div className="">
           <Properties setRawJson={setRawJson} rawJson={rawJson} jsonMetadata={jsonMetadata} setJsonMetadata={setJsonMetadata} />
         </div>
-
         <div className="text-center">
           <div className="text-4xl pb-8"> Attributes </div>
           <Attributes attributes={jsonMetadata.attributes} loading={loading} setLoding={setLoading} />
         </div>
-
       </div>
     </div >
   )

@@ -1,5 +1,7 @@
 # Website to preview and verify the qualify of Web3 tokens based on the ERC721 guidelines
 
+Side note: mobile responsiveness for this site is not a priority as it would never realistically be used on a phone.
+
 ## Use this data to test the site:
 
 ipfs link: 
@@ -50,58 +52,6 @@ JSON:
     {
       "value": "Guilloche",
       "trait_type": "Patterns"
-    },
-    {
-      "value": "ZigZag 3",
-      "trait_type": "Patterns"
-    },
-    {
-      "value": "Red Lady",
-      "trait_type": "Illustrations"
-    },
-    {
-      "value": "Butterfly",
-      "trait_type": "Illustrations"
-    },
-    {
-      "value": "Poster Woman",
-      "trait_type": "Illustrations"
-    },
-    {
-      "value": "Russian",
-      "trait_type": "Typography"
-    },
-    {
-      "value": "Revolt",
-      "trait_type": "Typography"
-    },
-    {
-      "value": "Criminal",
-      "trait_type": "Typography"
-    },
-    {
-      "value": "Blue Hex Lines",
-      "trait_type": "Linework"
-    },
-    {
-      "value": "Warrior",
-      "trait_type": "Linework"
-    },
-    {
-      "value": "Asanoha",
-      "trait_type": "Doodads"
-    },
-    {
-      "value": "Mouse Pointer",
-      "trait_type": "Doodads"
-    },
-    {
-      "value": "Russian Skull Shock",
-      "trait_type": "Doodads"
-    },
-    {
-      "value": "Baby Blue",
-      "trait_type": "Background"
     }
   ]
 }
